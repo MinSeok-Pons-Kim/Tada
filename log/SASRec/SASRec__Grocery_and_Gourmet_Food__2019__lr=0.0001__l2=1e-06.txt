@@ -1,0 +1,195 @@
+INFO:root:Namespace(model_name='SASRec')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-03 11:18:10 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0.2                 
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ hidden_size     | 100                 
+ history_max     | 20                  
+ l2              | 1e-06               
+ load            | 0                   
+ lr              | 0.0001              
+ metric          | ["NDCG","HR"]       
+ num_layers      | 1                   
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ topk            | [5,10]              
+========================================
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/BaseReader.pkl
+INFO:root:#params: 563328
+INFO:root:SASRec(
+  (i_embeddings): Embedding(8457, 64)
+  (p_embeddings): Embedding(21, 64)
+  (Q): Linear(in_features=64, out_features=64, bias=False)
+  (K): Linear(in_features=64, out_features=64, bias=False)
+  (V): Linear(in_features=64, out_features=64, bias=False)
+  (W1): Linear(in_features=64, out_features=64, bias=True)
+  (W2): Linear(in_features=64, out_features=64, bias=True)
+  (dropout_layer): Dropout(p=0.2, inplace=False)
+  (layer_norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+)
+INFO:root:Test Before Training: (HR@10:0.0983,HR@5:0.0484,NDCG@10:0.0451,NDCG@5:0.0291)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6112 [12.7 s]	 dev=(HR@5:0.2525,NDCG@5:0.1631) test=(HR@5:0.2188,NDCG@5:0.1370) [1.1 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 2     loss=0.4973 [13.5 s]	 dev=(HR@5:0.2581,NDCG@5:0.1681) test=(HR@5:0.2185,NDCG@5:0.1385) [1.1 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 3     loss=0.4525 [13.2 s]	 dev=(HR@5:0.2776,NDCG@5:0.1851) test=(HR@5:0.2361,NDCG@5:0.1523) [1.3 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 4     loss=0.4286 [15.8 s]	 dev=(HR@5:0.3082,NDCG@5:0.2077) test=(HR@5:0.2606,NDCG@5:0.1702) [1.2 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 5     loss=0.4115 [14.7 s]	 dev=(HR@5:0.3216,NDCG@5:0.2184) test=(HR@5:0.2769,NDCG@5:0.1820) [1.2 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 6     loss=0.3969 [15.8 s]	 dev=(HR@5:0.3306,NDCG@5:0.2238) test=(HR@5:0.2851,NDCG@5:0.1876) [1.3 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 7     loss=0.3860 [15.9 s]	 dev=(HR@5:0.3361,NDCG@5:0.2288) test=(HR@5:0.2884,NDCG@5:0.1905) [1.3 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 8     loss=0.3782 [16.2 s]	 dev=(HR@5:0.3445,NDCG@5:0.2351) test=(HR@5:0.2944,NDCG@5:0.1954) [1.2 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 9     loss=0.3693 [15.1 s]	 dev=(HR@5:0.3487,NDCG@5:0.2370) test=(HR@5:0.2980,NDCG@5:0.1972) [1.2 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 10    loss=0.3595 [15.9 s]	 dev=(HR@5:0.3545,NDCG@5:0.2426) test=(HR@5:0.3064,NDCG@5:0.2022) [1.2 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 11    loss=0.3498 [16.0 s]	 dev=(HR@5:0.3573,NDCG@5:0.2454) test=(HR@5:0.3083,NDCG@5:0.2045) [1.3 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 12    loss=0.3410 [16.2 s]	 dev=(HR@5:0.3631,NDCG@5:0.2496) test=(HR@5:0.3129,NDCG@5:0.2085) [1.2 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 13    loss=0.3318 [15.5 s]	 dev=(HR@5:0.3682,NDCG@5:0.2535) test=(HR@5:0.3182,NDCG@5:0.2111) [1.2 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 14    loss=0.3230 [15.7 s]	 dev=(HR@5:0.3747,NDCG@5:0.2594) test=(HR@5:0.3237,NDCG@5:0.2161) [1.4 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 15    loss=0.3135 [16.1 s]	 dev=(HR@5:0.3798,NDCG@5:0.2627) test=(HR@5:0.3292,NDCG@5:0.2192) [1.3 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 16    loss=0.3048 [15.7 s]	 dev=(HR@5:0.3860,NDCG@5:0.2684) test=(HR@5:0.3359,NDCG@5:0.2246) [1.4 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 17    loss=0.2936 [16.0 s]	 dev=(HR@5:0.3922,NDCG@5:0.2738) test=(HR@5:0.3405,NDCG@5:0.2282) [1.2 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 18    loss=0.2834 [15.1 s]	 dev=(HR@5:0.3981,NDCG@5:0.2780) test=(HR@5:0.3460,NDCG@5:0.2330) [1.3 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 19    loss=0.2752 [16.0 s]	 dev=(HR@5:0.4045,NDCG@5:0.2850) test=(HR@5:0.3504,NDCG@5:0.2375) [1.2 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 20    loss=0.2635 [15.6 s]	 dev=(HR@5:0.4100,NDCG@5:0.2903) test=(HR@5:0.3597,NDCG@5:0.2445) [1.4 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 21    loss=0.2553 [17.0 s]	 dev=(HR@5:0.4151,NDCG@5:0.2939) test=(HR@5:0.3612,NDCG@5:0.2468) [1.4 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 22    loss=0.2468 [16.5 s]	 dev=(HR@5:0.4203,NDCG@5:0.2979) test=(HR@5:0.3671,NDCG@5:0.2511) [1.5 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 23    loss=0.2387 [17.4 s]	 dev=(HR@5:0.4225,NDCG@5:0.3007) test=(HR@5:0.3714,NDCG@5:0.2538) [1.4 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 24    loss=0.2311 [17.4 s]	 dev=(HR@5:0.4258,NDCG@5:0.3037) test=(HR@5:0.3749,NDCG@5:0.2574) [1.4 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 25    loss=0.2238 [15.8 s]	 dev=(HR@5:0.4299,NDCG@5:0.3067) test=(HR@5:0.3782,NDCG@5:0.2604) [1.3 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 26    loss=0.2152 [15.9 s]	 dev=(HR@5:0.4329,NDCG@5:0.3105) test=(HR@5:0.3828,NDCG@5:0.2637) [1.2 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 27    loss=0.2093 [14.8 s]	 dev=(HR@5:0.4396,NDCG@5:0.3149) test=(HR@5:0.3868,NDCG@5:0.2672) [1.2 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 28    loss=0.2007 [15.3 s]	 dev=(HR@5:0.4402,NDCG@5:0.3150) test=(HR@5:0.3887,NDCG@5:0.2689) [1.2 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 29    loss=0.1947 [13.7 s]	 dev=(HR@5:0.4445,NDCG@5:0.3180) test=(HR@5:0.3898,NDCG@5:0.2704) [1.2 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 30    loss=0.1882 [13.1 s]	 dev=(HR@5:0.4473,NDCG@5:0.3212) test=(HR@5:0.3950,NDCG@5:0.2737) [1.1 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 31    loss=0.1826 [13.7 s]	 dev=(HR@5:0.4464,NDCG@5:0.3223) test=(HR@5:0.3955,NDCG@5:0.2748) [1.2 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 32    loss=0.1761 [14.0 s]	 dev=(HR@5:0.4489,NDCG@5:0.3243) test=(HR@5:0.3991,NDCG@5:0.2777) [1.3 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 33    loss=0.1722 [14.3 s]	 dev=(HR@5:0.4488,NDCG@5:0.3244) test=(HR@5:0.3988,NDCG@5:0.2778) [1.2 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 34    loss=0.1667 [13.8 s]	 dev=(HR@5:0.4511,NDCG@5:0.3268) test=(HR@5:0.4017,NDCG@5:0.2800) [1.2 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 35    loss=0.1613 [14.1 s]	 dev=(HR@5:0.4518,NDCG@5:0.3284) test=(HR@5:0.4031,NDCG@5:0.2814) [1.1 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 36    loss=0.1564 [13.2 s]	 dev=(HR@5:0.4552,NDCG@5:0.3298) test=(HR@5:0.4034,NDCG@5:0.2820) [1.1 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 37    loss=0.1503 [13.8 s]	 dev=(HR@5:0.4575,NDCG@5:0.3314) test=(HR@5:0.4056,NDCG@5:0.2834) [1.1 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 38    loss=0.1468 [13.0 s]	 dev=(HR@5:0.4564,NDCG@5:0.3322) test=(HR@5:0.4060,NDCG@5:0.2851) [1.3 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 39    loss=0.1421 [13.9 s]	 dev=(HR@5:0.4589,NDCG@5:0.3344) test=(HR@5:0.4093,NDCG@5:0.2877) [1.1 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 40    loss=0.1398 [13.6 s]	 dev=(HR@5:0.4593,NDCG@5:0.3352) test=(HR@5:0.4116,NDCG@5:0.2884) [1.3 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 41    loss=0.1352 [14.1 s]	 dev=(HR@5:0.4604,NDCG@5:0.3361) test=(HR@5:0.4143,NDCG@5:0.2902) [1.2 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 42    loss=0.1316 [13.5 s]	 dev=(HR@5:0.4617,NDCG@5:0.3374) test=(HR@5:0.4135,NDCG@5:0.2903) [1.3 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 43    loss=0.1275 [13.2 s]	 dev=(HR@5:0.4620,NDCG@5:0.3381) test=(HR@5:0.4127,NDCG@5:0.2906) [1.2 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 44    loss=0.1243 [12.7 s]	 dev=(HR@5:0.4666,NDCG@5:0.3422) test=(HR@5:0.4176,NDCG@5:0.2944) [1.1 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 45    loss=0.1199 [12.7 s]	 dev=(HR@5:0.4645,NDCG@5:0.3402) test=(HR@5:0.4143,NDCG@5:0.2925) [1.0 s] 
+INFO:root:Epoch 46    loss=0.1156 [12.6 s]	 dev=(HR@5:0.4646,NDCG@5:0.3404) test=(HR@5:0.4171,NDCG@5:0.2928) [1.1 s] 
+INFO:root:Epoch 47    loss=0.1141 [9.7 s]	 dev=(HR@5:0.4638,NDCG@5:0.3409) test=(HR@5:0.4157,NDCG@5:0.2939) [0.9 s] 
+INFO:root:Epoch 48    loss=0.1094 [9.0 s]	 dev=(HR@5:0.4647,NDCG@5:0.3412) test=(HR@5:0.4162,NDCG@5:0.2942) [0.8 s] 
+INFO:root:Epoch 49    loss=0.1057 [8.6 s]	 dev=(HR@5:0.4676,NDCG@5:0.3436) test=(HR@5:0.4145,NDCG@5:0.2936) [0.8 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 50    loss=0.1048 [8.9 s]	 dev=(HR@5:0.4681,NDCG@5:0.3437) test=(HR@5:0.4174,NDCG@5:0.2945) [0.8 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 51    loss=0.1010 [8.3 s]	 dev=(HR@5:0.4678,NDCG@5:0.3433) test=(HR@5:0.4168,NDCG@5:0.2959) [0.8 s] 
+INFO:root:Epoch 52    loss=0.0985 [9.0 s]	 dev=(HR@5:0.4673,NDCG@5:0.3432) test=(HR@5:0.4176,NDCG@5:0.2958) [0.8 s] 
+INFO:root:Epoch 53    loss=0.0961 [9.0 s]	 dev=(HR@5:0.4708,NDCG@5:0.3473) test=(HR@5:0.4188,NDCG@5:0.2986) [0.8 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 54    loss=0.0941 [9.2 s]	 dev=(HR@5:0.4691,NDCG@5:0.3454) test=(HR@5:0.4186,NDCG@5:0.2978) [0.8 s] 
+INFO:root:Epoch 55    loss=0.0926 [8.7 s]	 dev=(HR@5:0.4685,NDCG@5:0.3449) test=(HR@5:0.4167,NDCG@5:0.2961) [0.8 s] 
+INFO:root:Epoch 56    loss=0.0908 [8.9 s]	 dev=(HR@5:0.4717,NDCG@5:0.3483) test=(HR@5:0.4181,NDCG@5:0.2977) [0.8 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 57    loss=0.0870 [9.0 s]	 dev=(HR@5:0.4694,NDCG@5:0.3467) test=(HR@5:0.4206,NDCG@5:0.2994) [0.8 s] 
+INFO:root:Epoch 58    loss=0.0854 [8.8 s]	 dev=(HR@5:0.4680,NDCG@5:0.3448) test=(HR@5:0.4170,NDCG@5:0.2961) [0.8 s] 
+INFO:root:Epoch 59    loss=0.0833 [8.2 s]	 dev=(HR@5:0.4696,NDCG@5:0.3474) test=(HR@5:0.4185,NDCG@5:0.2991) [0.8 s] 
+INFO:root:Epoch 60    loss=0.0812 [8.7 s]	 dev=(HR@5:0.4665,NDCG@5:0.3455) test=(HR@5:0.4168,NDCG@5:0.2967) [0.8 s] 
+INFO:root:Epoch 61    loss=0.0786 [9.0 s]	 dev=(HR@5:0.4665,NDCG@5:0.3454) test=(HR@5:0.4164,NDCG@5:0.2975) [0.8 s] 
+INFO:root:Epoch 62    loss=0.0777 [8.6 s]	 dev=(HR@5:0.4666,NDCG@5:0.3450) test=(HR@5:0.4172,NDCG@5:0.2974) [0.7 s] 
+INFO:root:Epoch 63    loss=0.0762 [7.6 s]	 dev=(HR@5:0.4668,NDCG@5:0.3470) test=(HR@5:0.4199,NDCG@5:0.2996) [1.1 s] 
+INFO:root:Epoch 64    loss=0.0745 [8.2 s]	 dev=(HR@5:0.4693,NDCG@5:0.3485) test=(HR@5:0.4199,NDCG@5:0.2990) [0.8 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 65    loss=0.0727 [7.6 s]	 dev=(HR@5:0.4691,NDCG@5:0.3494) test=(HR@5:0.4193,NDCG@5:0.2998) [0.7 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 66    loss=0.0705 [7.6 s]	 dev=(HR@5:0.4694,NDCG@5:0.3492) test=(HR@5:0.4199,NDCG@5:0.2997) [0.8 s] 
+INFO:root:Epoch 67    loss=0.0702 [6.8 s]	 dev=(HR@5:0.4693,NDCG@5:0.3498) test=(HR@5:0.4200,NDCG@5:0.3000) [0.8 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 68    loss=0.0680 [7.6 s]	 dev=(HR@5:0.4692,NDCG@5:0.3487) test=(HR@5:0.4199,NDCG@5:0.2999) [0.7 s] 
+INFO:root:Epoch 69    loss=0.0666 [7.2 s]	 dev=(HR@5:0.4681,NDCG@5:0.3475) test=(HR@5:0.4173,NDCG@5:0.2974) [0.8 s] 
+INFO:root:Epoch 70    loss=0.0649 [7.6 s]	 dev=(HR@5:0.4710,NDCG@5:0.3495) test=(HR@5:0.4179,NDCG@5:0.2987) [0.8 s] 
+INFO:root:Epoch 71    loss=0.0637 [7.0 s]	 dev=(HR@5:0.4707,NDCG@5:0.3510) test=(HR@5:0.4217,NDCG@5:0.3022) [0.8 s] 
+INFO:root:Save model to ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 72    loss=0.0627 [7.9 s]	 dev=(HR@5:0.4681,NDCG@5:0.3487) test=(HR@5:0.4185,NDCG@5:0.2988) [0.7 s] 
+INFO:root:Epoch 73    loss=0.0614 [7.7 s]	 dev=(HR@5:0.4713,NDCG@5:0.3497) test=(HR@5:0.4206,NDCG@5:0.3004) [0.8 s] 
+INFO:root:Epoch 74    loss=0.0597 [7.7 s]	 dev=(HR@5:0.4691,NDCG@5:0.3480) test=(HR@5:0.4177,NDCG@5:0.2982) [0.8 s] 
+INFO:root:Epoch 75    loss=0.0599 [4.7 s]	 dev=(HR@5:0.4687,NDCG@5:0.3477) test=(HR@5:0.4174,NDCG@5:0.2976) [0.6 s] 
+INFO:root:Epoch 76    loss=0.0574 [4.4 s]	 dev=(HR@5:0.4702,NDCG@5:0.3500) test=(HR@5:0.4201,NDCG@5:0.3009) [0.6 s] 
+INFO:root:Epoch 77    loss=0.0565 [4.9 s]	 dev=(HR@5:0.4682,NDCG@5:0.3496) test=(HR@5:0.4186,NDCG@5:0.2994) [0.6 s] 
+INFO:root:Epoch 78    loss=0.0550 [3.5 s]	 dev=(HR@5:0.4700,NDCG@5:0.3492) test=(HR@5:0.4184,NDCG@5:0.2986) [0.6 s] 
+INFO:root:Epoch 79    loss=0.0552 [4.6 s]	 dev=(HR@5:0.4661,NDCG@5:0.3480) test=(HR@5:0.4182,NDCG@5:0.2990) [0.7 s] 
+INFO:root:Epoch 80    loss=0.0544 [5.0 s]	 dev=(HR@5:0.4681,NDCG@5:0.3492) test=(HR@5:0.4201,NDCG@5:0.3007) [0.6 s] 
+INFO:root:Epoch 81    loss=0.0524 [4.0 s]	 dev=(HR@5:0.4685,NDCG@5:0.3492) test=(HR@5:0.4193,NDCG@5:0.3013) [0.6 s] 
+INFO:root:Epoch 82    loss=0.0527 [4.2 s]	 dev=(HR@5:0.4681,NDCG@5:0.3491) test=(HR@5:0.4174,NDCG@5:0.2999) [0.6 s] 
+INFO:root:Epoch 83    loss=0.0510 [4.7 s]	 dev=(HR@5:0.4661,NDCG@5:0.3467) test=(HR@5:0.4137,NDCG@5:0.2975) [0.6 s] 
+INFO:root:Epoch 84    loss=0.0499 [4.5 s]	 dev=(HR@5:0.4664,NDCG@5:0.3478) test=(HR@5:0.4161,NDCG@5:0.2991) [0.6 s] 
+INFO:root:Epoch 85    loss=0.0486 [4.0 s]	 dev=(HR@5:0.4672,NDCG@5:0.3480) test=(HR@5:0.4192,NDCG@5:0.3001) [0.7 s] 
+INFO:root:Epoch 86    loss=0.0491 [4.4 s]	 dev=(HR@5:0.4695,NDCG@5:0.3502) test=(HR@5:0.4223,NDCG@5:0.3034) [0.7 s] 
+INFO:root:Epoch 87    loss=0.0469 [5.0 s]	 dev=(HR@5:0.4673,NDCG@5:0.3482) test=(HR@5:0.4199,NDCG@5:0.3013) [0.6 s] 
+INFO:root:Epoch 88    loss=0.0471 [4.0 s]	 dev=(HR@5:0.4629,NDCG@5:0.3456) test=(HR@5:0.4167,NDCG@5:0.2992) [0.6 s] 
+INFO:root:Epoch 89    loss=0.0463 [4.1 s]	 dev=(HR@5:0.4644,NDCG@5:0.3454) test=(HR@5:0.4141,NDCG@5:0.2985) [0.7 s] 
+INFO:root:Epoch 90    loss=0.0451 [4.9 s]	 dev=(HR@5:0.4642,NDCG@5:0.3473) test=(HR@5:0.4193,NDCG@5:0.3015) [0.6 s] 
+INFO:root:Epoch 91    loss=0.0437 [4.4 s]	 dev=(HR@5:0.4653,NDCG@5:0.3480) test=(HR@5:0.4182,NDCG@5:0.3011) [0.6 s] 
+INFO:root:Early stop at 91 based on dev result.
+INFO:root:
+Best Iter(dev)=   71	 dev=(HR@5:0.4707,NDCG@5:0.3510) test=(HR@5:0.4217,NDCG@5:0.3022) [1078.0 s] 
+INFO:root:Load model from ../model/SASRec/SASRec__Grocery_and_Gourmet_Food__2019__lr=0.0001__l2=1e-06.pt
+INFO:root:
+Test After Training: (HR@10:0.5256,HR@5:0.4217,NDCG@10:0.3360,NDCG@5:0.3022)
+INFO:root:
+--------------------------------------------- END: 2020-11-03 11:36:14 ---------------------------------------------

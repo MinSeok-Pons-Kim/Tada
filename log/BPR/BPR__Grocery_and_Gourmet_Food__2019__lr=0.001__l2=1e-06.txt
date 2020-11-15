@@ -1,0 +1,1127 @@
+INFO:root:Namespace(model_name='BPR')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-02 20:17:28 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0.2                 
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-06               
+ load            | 0                   
+ lr              | 0.001               
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ topk            | [5,10]              
+========================================
+INFO:root:# cuda devices: 1
+INFO:root:Reading data from "../data/", dataset = "Grocery_and_Gourmet_Food" 
+INFO:root:Formating data type...
+INFO:root:Namespace(model_name='BPR')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-02 20:17:38 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0.2                 
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-06               
+ load            | 0                   
+ lr              | 0.001               
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ topk            | [5,10]              
+========================================
+INFO:root:# cuda devices: 1
+INFO:root:Reading data from "../data/", dataset = "Grocery_and_Gourmet_Food" 
+INFO:root:Formating data type...
+INFO:root:Constructing relation triplets...
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 14681, "# item": 8457, "# entry": 145832
+INFO:root:"# relation": 3, "# triplet": 372090
+INFO:root:Adding history info...
+INFO:root:Done! [5.86 s]
+
+INFO:root:Save corpus to ../data/Grocery_and_Gourmet_Food/BaseReader.pkl
+INFO:root:#params: 1503970
+INFO:root:BPR(
+  (u_embeddings): Embedding(14681, 64)
+  (i_embeddings): Embedding(8457, 64)
+  (user_bias): Embedding(14681, 1)
+  (item_bias): Embedding(8457, 1)
+)
+INFO:root:Test Before Training: (HR@10:0.1086,HR@5:0.0571,NDCG@10:0.0495,NDCG@5:0.0330)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6541 [1.1 s]	 dev=(HR@5:0.2840,NDCG@5:0.1860) test=(HR@5:0.2462,NDCG@5:0.1539) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 2     loss=0.5103 [1.4 s]	 dev=(HR@5:0.2951,NDCG@5:0.1950) test=(HR@5:0.2627,NDCG@5:0.1663) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 3     loss=0.4433 [1.1 s]	 dev=(HR@5:0.3037,NDCG@5:0.2042) test=(HR@5:0.2660,NDCG@5:0.1717) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 4     loss=0.4022 [1.1 s]	 dev=(HR@5:0.3160,NDCG@5:0.2161) test=(HR@5:0.2710,NDCG@5:0.1785) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 5     loss=0.3629 [1.3 s]	 dev=(HR@5:0.3274,NDCG@5:0.2247) test=(HR@5:0.2766,NDCG@5:0.1844) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 6     loss=0.3263 [1.3 s]	 dev=(HR@5:0.3337,NDCG@5:0.2319) test=(HR@5:0.2840,NDCG@5:0.1921) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 7     loss=0.2923 [1.1 s]	 dev=(HR@5:0.3442,NDCG@5:0.2412) test=(HR@5:0.2899,NDCG@5:0.1973) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 8     loss=0.2587 [1.3 s]	 dev=(HR@5:0.3527,NDCG@5:0.2476) test=(HR@5:0.2970,NDCG@5:0.2023) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 9     loss=0.2278 [1.3 s]	 dev=(HR@5:0.3595,NDCG@5:0.2538) test=(HR@5:0.3021,NDCG@5:0.2055) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 10    loss=0.2023 [1.1 s]	 dev=(HR@5:0.3629,NDCG@5:0.2575) test=(HR@5:0.3052,NDCG@5:0.2090) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 11    loss=0.1779 [1.1 s]	 dev=(HR@5:0.3701,NDCG@5:0.2634) test=(HR@5:0.3104,NDCG@5:0.2126) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 12    loss=0.1576 [1.2 s]	 dev=(HR@5:0.3741,NDCG@5:0.2660) test=(HR@5:0.3141,NDCG@5:0.2141) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 13    loss=0.1394 [1.1 s]	 dev=(HR@5:0.3772,NDCG@5:0.2681) test=(HR@5:0.3169,NDCG@5:0.2163) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 14    loss=0.1241 [1.2 s]	 dev=(HR@5:0.3807,NDCG@5:0.2705) test=(HR@5:0.3200,NDCG@5:0.2196) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 15    loss=0.1110 [1.2 s]	 dev=(HR@5:0.3824,NDCG@5:0.2726) test=(HR@5:0.3211,NDCG@5:0.2208) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 16    loss=0.1001 [1.2 s]	 dev=(HR@5:0.3848,NDCG@5:0.2748) test=(HR@5:0.3242,NDCG@5:0.2224) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 17    loss=0.0900 [1.2 s]	 dev=(HR@5:0.3871,NDCG@5:0.2762) test=(HR@5:0.3259,NDCG@5:0.2232) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 18    loss=0.0812 [1.1 s]	 dev=(HR@5:0.3897,NDCG@5:0.2780) test=(HR@5:0.3272,NDCG@5:0.2245) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 19    loss=0.0750 [1.1 s]	 dev=(HR@5:0.3887,NDCG@5:0.2775) test=(HR@5:0.3273,NDCG@5:0.2256) [0.3 s] 
+INFO:root:Epoch 20    loss=0.0682 [1.1 s]	 dev=(HR@5:0.3907,NDCG@5:0.2789) test=(HR@5:0.3312,NDCG@5:0.2276) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 21    loss=0.0635 [1.1 s]	 dev=(HR@5:0.3916,NDCG@5:0.2796) test=(HR@5:0.3303,NDCG@5:0.2279) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 22    loss=0.0590 [1.4 s]	 dev=(HR@5:0.3937,NDCG@5:0.2815) test=(HR@5:0.3331,NDCG@5:0.2290) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 23    loss=0.0546 [1.3 s]	 dev=(HR@5:0.3970,NDCG@5:0.2823) test=(HR@5:0.3336,NDCG@5:0.2286) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 24    loss=0.0523 [1.1 s]	 dev=(HR@5:0.3987,NDCG@5:0.2835) test=(HR@5:0.3361,NDCG@5:0.2299) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 25    loss=0.0496 [1.2 s]	 dev=(HR@5:0.4016,NDCG@5:0.2848) test=(HR@5:0.3363,NDCG@5:0.2303) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 26    loss=0.0468 [1.2 s]	 dev=(HR@5:0.4019,NDCG@5:0.2862) test=(HR@5:0.3386,NDCG@5:0.2320) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 27    loss=0.0448 [1.2 s]	 dev=(HR@5:0.4024,NDCG@5:0.2870) test=(HR@5:0.3373,NDCG@5:0.2316) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 28    loss=0.0425 [1.3 s]	 dev=(HR@5:0.4032,NDCG@5:0.2879) test=(HR@5:0.3389,NDCG@5:0.2327) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 29    loss=0.0408 [1.2 s]	 dev=(HR@5:0.4055,NDCG@5:0.2885) test=(HR@5:0.3387,NDCG@5:0.2323) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 30    loss=0.0407 [1.1 s]	 dev=(HR@5:0.4056,NDCG@5:0.2886) test=(HR@5:0.3376,NDCG@5:0.2318) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 31    loss=0.0385 [1.1 s]	 dev=(HR@5:0.4079,NDCG@5:0.2906) test=(HR@5:0.3390,NDCG@5:0.2332) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 32    loss=0.0375 [1.3 s]	 dev=(HR@5:0.4066,NDCG@5:0.2903) test=(HR@5:0.3393,NDCG@5:0.2338) [0.4 s] 
+INFO:root:Epoch 33    loss=0.0373 [1.3 s]	 dev=(HR@5:0.4083,NDCG@5:0.2923) test=(HR@5:0.3423,NDCG@5:0.2354) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 34    loss=0.0358 [1.4 s]	 dev=(HR@5:0.4086,NDCG@5:0.2931) test=(HR@5:0.3444,NDCG@5:0.2366) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 35    loss=0.0359 [1.2 s]	 dev=(HR@5:0.4094,NDCG@5:0.2934) test=(HR@5:0.3440,NDCG@5:0.2366) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 36    loss=0.0350 [1.2 s]	 dev=(HR@5:0.4107,NDCG@5:0.2938) test=(HR@5:0.3433,NDCG@5:0.2361) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 37    loss=0.0345 [1.3 s]	 dev=(HR@5:0.4118,NDCG@5:0.2948) test=(HR@5:0.3453,NDCG@5:0.2375) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 38    loss=0.0340 [1.3 s]	 dev=(HR@5:0.4130,NDCG@5:0.2954) test=(HR@5:0.3444,NDCG@5:0.2366) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 39    loss=0.0335 [1.1 s]	 dev=(HR@5:0.4155,NDCG@5:0.2974) test=(HR@5:0.3477,NDCG@5:0.2396) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 40    loss=0.0339 [1.1 s]	 dev=(HR@5:0.4167,NDCG@5:0.2976) test=(HR@5:0.3461,NDCG@5:0.2392) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 41    loss=0.0324 [1.2 s]	 dev=(HR@5:0.4177,NDCG@5:0.2989) test=(HR@5:0.3469,NDCG@5:0.2390) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 42    loss=0.0321 [1.1 s]	 dev=(HR@5:0.4164,NDCG@5:0.2977) test=(HR@5:0.3470,NDCG@5:0.2390) [0.4 s] 
+INFO:root:Epoch 43    loss=0.0318 [1.0 s]	 dev=(HR@5:0.4174,NDCG@5:0.2994) test=(HR@5:0.3478,NDCG@5:0.2395) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 44    loss=0.0317 [1.4 s]	 dev=(HR@5:0.4189,NDCG@5:0.2997) test=(HR@5:0.3504,NDCG@5:0.2414) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 45    loss=0.0311 [1.2 s]	 dev=(HR@5:0.4182,NDCG@5:0.2994) test=(HR@5:0.3501,NDCG@5:0.2409) [0.3 s] 
+INFO:root:Epoch 46    loss=0.0315 [1.1 s]	 dev=(HR@5:0.4173,NDCG@5:0.2992) test=(HR@5:0.3508,NDCG@5:0.2415) [0.3 s] 
+INFO:root:Epoch 47    loss=0.0312 [1.2 s]	 dev=(HR@5:0.4181,NDCG@5:0.2997) test=(HR@5:0.3516,NDCG@5:0.2423) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 48    loss=0.0304 [1.3 s]	 dev=(HR@5:0.4184,NDCG@5:0.3002) test=(HR@5:0.3534,NDCG@5:0.2432) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 49    loss=0.0306 [1.2 s]	 dev=(HR@5:0.4196,NDCG@5:0.3009) test=(HR@5:0.3523,NDCG@5:0.2422) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 50    loss=0.0304 [1.3 s]	 dev=(HR@5:0.4192,NDCG@5:0.3005) test=(HR@5:0.3523,NDCG@5:0.2426) [0.4 s] 
+INFO:root:Epoch 51    loss=0.0301 [1.3 s]	 dev=(HR@5:0.4182,NDCG@5:0.3003) test=(HR@5:0.3521,NDCG@5:0.2423) [0.3 s] 
+INFO:root:Epoch 52    loss=0.0298 [1.4 s]	 dev=(HR@5:0.4200,NDCG@5:0.3012) test=(HR@5:0.3537,NDCG@5:0.2435) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 53    loss=0.0294 [1.3 s]	 dev=(HR@5:0.4193,NDCG@5:0.3013) test=(HR@5:0.3547,NDCG@5:0.2433) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 54    loss=0.0294 [1.3 s]	 dev=(HR@5:0.4182,NDCG@5:0.3004) test=(HR@5:0.3538,NDCG@5:0.2421) [0.3 s] 
+INFO:root:Epoch 55    loss=0.0291 [1.2 s]	 dev=(HR@5:0.4189,NDCG@5:0.3015) test=(HR@5:0.3532,NDCG@5:0.2423) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 56    loss=0.0296 [1.1 s]	 dev=(HR@5:0.4195,NDCG@5:0.3026) test=(HR@5:0.3522,NDCG@5:0.2415) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 57    loss=0.0295 [1.4 s]	 dev=(HR@5:0.4198,NDCG@5:0.3032) test=(HR@5:0.3516,NDCG@5:0.2415) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 58    loss=0.0287 [1.3 s]	 dev=(HR@5:0.4220,NDCG@5:0.3039) test=(HR@5:0.3520,NDCG@5:0.2420) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 59    loss=0.0290 [1.2 s]	 dev=(HR@5:0.4209,NDCG@5:0.3038) test=(HR@5:0.3541,NDCG@5:0.2436) [0.3 s] 
+INFO:root:Epoch 60    loss=0.0292 [1.3 s]	 dev=(HR@5:0.4227,NDCG@5:0.3046) test=(HR@5:0.3564,NDCG@5:0.2448) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 61    loss=0.0284 [1.4 s]	 dev=(HR@5:0.4229,NDCG@5:0.3046) test=(HR@5:0.3560,NDCG@5:0.2450) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 62    loss=0.0289 [1.2 s]	 dev=(HR@5:0.4216,NDCG@5:0.3042) test=(HR@5:0.3555,NDCG@5:0.2447) [0.3 s] 
+INFO:root:Epoch 63    loss=0.0287 [1.4 s]	 dev=(HR@5:0.4215,NDCG@5:0.3035) test=(HR@5:0.3570,NDCG@5:0.2459) [0.4 s] 
+INFO:root:Epoch 64    loss=0.0289 [1.4 s]	 dev=(HR@5:0.4220,NDCG@5:0.3041) test=(HR@5:0.3566,NDCG@5:0.2463) [0.3 s] 
+INFO:root:Epoch 65    loss=0.0279 [1.3 s]	 dev=(HR@5:0.4218,NDCG@5:0.3040) test=(HR@5:0.3566,NDCG@5:0.2463) [0.3 s] 
+INFO:root:Epoch 66    loss=0.0286 [1.4 s]	 dev=(HR@5:0.4225,NDCG@5:0.3044) test=(HR@5:0.3581,NDCG@5:0.2457) [0.3 s] 
+INFO:root:Epoch 67    loss=0.0285 [1.3 s]	 dev=(HR@5:0.4235,NDCG@5:0.3047) test=(HR@5:0.3550,NDCG@5:0.2447) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 68    loss=0.0283 [1.1 s]	 dev=(HR@5:0.4232,NDCG@5:0.3045) test=(HR@5:0.3554,NDCG@5:0.2444) [0.3 s] 
+INFO:root:Epoch 69    loss=0.0275 [1.3 s]	 dev=(HR@5:0.4243,NDCG@5:0.3058) test=(HR@5:0.3553,NDCG@5:0.2446) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 70    loss=0.0282 [1.1 s]	 dev=(HR@5:0.4247,NDCG@5:0.3064) test=(HR@5:0.3564,NDCG@5:0.2458) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 71    loss=0.0276 [1.2 s]	 dev=(HR@5:0.4250,NDCG@5:0.3061) test=(HR@5:0.3572,NDCG@5:0.2461) [0.3 s] 
+INFO:root:Epoch 72    loss=0.0275 [1.2 s]	 dev=(HR@5:0.4251,NDCG@5:0.3063) test=(HR@5:0.3553,NDCG@5:0.2451) [0.4 s] 
+INFO:root:Epoch 73    loss=0.0274 [1.3 s]	 dev=(HR@5:0.4265,NDCG@5:0.3070) test=(HR@5:0.3575,NDCG@5:0.2462) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 74    loss=0.0274 [1.1 s]	 dev=(HR@5:0.4281,NDCG@5:0.3076) test=(HR@5:0.3590,NDCG@5:0.2465) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 75    loss=0.0281 [1.3 s]	 dev=(HR@5:0.4279,NDCG@5:0.3079) test=(HR@5:0.3578,NDCG@5:0.2466) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 76    loss=0.0277 [1.1 s]	 dev=(HR@5:0.4265,NDCG@5:0.3074) test=(HR@5:0.3576,NDCG@5:0.2463) [0.3 s] 
+INFO:root:Epoch 77    loss=0.0272 [1.1 s]	 dev=(HR@5:0.4269,NDCG@5:0.3083) test=(HR@5:0.3582,NDCG@5:0.2469) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 78    loss=0.0278 [1.2 s]	 dev=(HR@5:0.4262,NDCG@5:0.3070) test=(HR@5:0.3568,NDCG@5:0.2459) [0.3 s] 
+INFO:root:Epoch 79    loss=0.0272 [1.1 s]	 dev=(HR@5:0.4257,NDCG@5:0.3072) test=(HR@5:0.3569,NDCG@5:0.2456) [0.3 s] 
+INFO:root:Epoch 80    loss=0.0273 [1.1 s]	 dev=(HR@5:0.4267,NDCG@5:0.3078) test=(HR@5:0.3575,NDCG@5:0.2462) [0.3 s] 
+INFO:root:Epoch 81    loss=0.0274 [1.2 s]	 dev=(HR@5:0.4275,NDCG@5:0.3087) test=(HR@5:0.3592,NDCG@5:0.2471) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 82    loss=0.0274 [1.5 s]	 dev=(HR@5:0.4267,NDCG@5:0.3083) test=(HR@5:0.3573,NDCG@5:0.2468) [0.3 s] 
+INFO:root:Epoch 83    loss=0.0269 [1.3 s]	 dev=(HR@5:0.4265,NDCG@5:0.3083) test=(HR@5:0.3593,NDCG@5:0.2478) [0.3 s] 
+INFO:root:Epoch 84    loss=0.0266 [1.0 s]	 dev=(HR@5:0.4271,NDCG@5:0.3090) test=(HR@5:0.3603,NDCG@5:0.2491) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 85    loss=0.0269 [1.2 s]	 dev=(HR@5:0.4271,NDCG@5:0.3091) test=(HR@5:0.3607,NDCG@5:0.2494) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 86    loss=0.0272 [1.2 s]	 dev=(HR@5:0.4297,NDCG@5:0.3099) test=(HR@5:0.3605,NDCG@5:0.2487) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 87    loss=0.0268 [1.3 s]	 dev=(HR@5:0.4274,NDCG@5:0.3091) test=(HR@5:0.3587,NDCG@5:0.2487) [0.3 s] 
+INFO:root:Epoch 88    loss=0.0269 [1.2 s]	 dev=(HR@5:0.4270,NDCG@5:0.3086) test=(HR@5:0.3588,NDCG@5:0.2482) [0.4 s] 
+INFO:root:Epoch 89    loss=0.0269 [1.4 s]	 dev=(HR@5:0.4275,NDCG@5:0.3088) test=(HR@5:0.3591,NDCG@5:0.2480) [0.4 s] 
+INFO:root:Epoch 90    loss=0.0259 [1.4 s]	 dev=(HR@5:0.4275,NDCG@5:0.3094) test=(HR@5:0.3590,NDCG@5:0.2484) [0.3 s] 
+INFO:root:Epoch 91    loss=0.0267 [1.3 s]	 dev=(HR@5:0.4278,NDCG@5:0.3094) test=(HR@5:0.3601,NDCG@5:0.2494) [0.3 s] 
+INFO:root:Epoch 92    loss=0.0267 [1.4 s]	 dev=(HR@5:0.4291,NDCG@5:0.3107) test=(HR@5:0.3619,NDCG@5:0.2504) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 93    loss=0.0266 [1.1 s]	 dev=(HR@5:0.4291,NDCG@5:0.3104) test=(HR@5:0.3608,NDCG@5:0.2504) [0.4 s] 
+INFO:root:Epoch 94    loss=0.0260 [1.4 s]	 dev=(HR@5:0.4277,NDCG@5:0.3096) test=(HR@5:0.3602,NDCG@5:0.2497) [0.4 s] 
+INFO:root:Epoch 95    loss=0.0261 [1.3 s]	 dev=(HR@5:0.4299,NDCG@5:0.3108) test=(HR@5:0.3594,NDCG@5:0.2493) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 96    loss=0.0263 [1.4 s]	 dev=(HR@5:0.4295,NDCG@5:0.3105) test=(HR@5:0.3613,NDCG@5:0.2496) [0.3 s] 
+INFO:root:Epoch 97    loss=0.0267 [1.4 s]	 dev=(HR@5:0.4293,NDCG@5:0.3104) test=(HR@5:0.3591,NDCG@5:0.2493) [0.3 s] 
+INFO:root:Epoch 98    loss=0.0260 [1.2 s]	 dev=(HR@5:0.4294,NDCG@5:0.3118) test=(HR@5:0.3594,NDCG@5:0.2497) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 99    loss=0.0260 [1.5 s]	 dev=(HR@5:0.4287,NDCG@5:0.3112) test=(HR@5:0.3598,NDCG@5:0.2498) [0.3 s] 
+INFO:root:Epoch 100   loss=0.0260 [1.3 s]	 dev=(HR@5:0.4288,NDCG@5:0.3112) test=(HR@5:0.3582,NDCG@5:0.2497) [0.3 s] 
+INFO:root:
+Best Iter(dev)=   98	 dev=(HR@5:0.4294,NDCG@5:0.3118) test=(HR@5:0.3594,NDCG@5:0.2497) [160.7 s] 
+INFO:root:Load model from ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__lr=0.001__l2=1e-06.pt
+INFO:root:
+Test After Training: (HR@10:0.4703,HR@5:0.3594,NDCG@10:0.2859,NDCG@5:0.2497)
+INFO:root:
+--------------------------------------------- END: 2020-11-02 20:20:33 ---------------------------------------------
+INFO:root:Namespace(model_name='BPR')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-02 22:53:36 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0.2                 
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-06               
+ load            | 0                   
+ lr              | 0.001               
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ topk            | [5,10]              
+========================================
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/BaseReader.pkl
+INFO:root:#params: 1503970
+INFO:root:BPR(
+  (u_embeddings): Embedding(14681, 64)
+  (i_embeddings): Embedding(8457, 64)
+  (user_bias): Embedding(14681, 1)
+  (item_bias): Embedding(8457, 1)
+)
+INFO:root:Test Before Training: (HR@10:0.1086,HR@5:0.0571,NDCG@10:0.0495,NDCG@5:0.0330)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6541 [1.7 s]	 dev=(HR@5:0.2840,NDCG@5:0.1860) test=(HR@5:0.2462,NDCG@5:0.1539) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 2     loss=0.5103 [1.6 s]	 dev=(HR@5:0.2951,NDCG@5:0.1950) test=(HR@5:0.2627,NDCG@5:0.1663) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 3     loss=0.4433 [1.6 s]	 dev=(HR@5:0.3037,NDCG@5:0.2042) test=(HR@5:0.2660,NDCG@5:0.1717) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 4     loss=0.4022 [1.5 s]	 dev=(HR@5:0.3160,NDCG@5:0.2161) test=(HR@5:0.2710,NDCG@5:0.1785) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 5     loss=0.3629 [1.5 s]	 dev=(HR@5:0.3274,NDCG@5:0.2247) test=(HR@5:0.2766,NDCG@5:0.1844) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 6     loss=0.3263 [1.5 s]	 dev=(HR@5:0.3337,NDCG@5:0.2319) test=(HR@5:0.2840,NDCG@5:0.1921) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 7     loss=0.2923 [1.6 s]	 dev=(HR@5:0.3442,NDCG@5:0.2412) test=(HR@5:0.2899,NDCG@5:0.1973) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 8     loss=0.2587 [1.5 s]	 dev=(HR@5:0.3527,NDCG@5:0.2476) test=(HR@5:0.2970,NDCG@5:0.2023) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 9     loss=0.2278 [1.5 s]	 dev=(HR@5:0.3595,NDCG@5:0.2538) test=(HR@5:0.3021,NDCG@5:0.2055) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 10    loss=0.2023 [1.5 s]	 dev=(HR@5:0.3629,NDCG@5:0.2575) test=(HR@5:0.3052,NDCG@5:0.2090) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 11    loss=0.1779 [1.5 s]	 dev=(HR@5:0.3701,NDCG@5:0.2634) test=(HR@5:0.3104,NDCG@5:0.2126) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 12    loss=0.1576 [1.6 s]	 dev=(HR@5:0.3741,NDCG@5:0.2660) test=(HR@5:0.3141,NDCG@5:0.2141) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 13    loss=0.1394 [1.5 s]	 dev=(HR@5:0.3772,NDCG@5:0.2681) test=(HR@5:0.3169,NDCG@5:0.2163) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 14    loss=0.1241 [1.6 s]	 dev=(HR@5:0.3807,NDCG@5:0.2705) test=(HR@5:0.3200,NDCG@5:0.2196) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 15    loss=0.1110 [1.6 s]	 dev=(HR@5:0.3824,NDCG@5:0.2726) test=(HR@5:0.3211,NDCG@5:0.2208) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 16    loss=0.1001 [1.5 s]	 dev=(HR@5:0.3848,NDCG@5:0.2748) test=(HR@5:0.3242,NDCG@5:0.2224) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 17    loss=0.0900 [1.5 s]	 dev=(HR@5:0.3871,NDCG@5:0.2762) test=(HR@5:0.3259,NDCG@5:0.2232) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 18    loss=0.0812 [1.6 s]	 dev=(HR@5:0.3897,NDCG@5:0.2780) test=(HR@5:0.3272,NDCG@5:0.2245) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 19    loss=0.0750 [1.6 s]	 dev=(HR@5:0.3887,NDCG@5:0.2775) test=(HR@5:0.3273,NDCG@5:0.2256) [0.4 s] 
+INFO:root:Epoch 20    loss=0.0682 [1.5 s]	 dev=(HR@5:0.3907,NDCG@5:0.2789) test=(HR@5:0.3312,NDCG@5:0.2276) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 21    loss=0.0635 [1.5 s]	 dev=(HR@5:0.3916,NDCG@5:0.2796) test=(HR@5:0.3303,NDCG@5:0.2279) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 22    loss=0.0590 [1.5 s]	 dev=(HR@5:0.3937,NDCG@5:0.2815) test=(HR@5:0.3331,NDCG@5:0.2290) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 23    loss=0.0546 [1.6 s]	 dev=(HR@5:0.3970,NDCG@5:0.2823) test=(HR@5:0.3336,NDCG@5:0.2286) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 24    loss=0.0523 [1.6 s]	 dev=(HR@5:0.3987,NDCG@5:0.2835) test=(HR@5:0.3361,NDCG@5:0.2299) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 25    loss=0.0496 [1.5 s]	 dev=(HR@5:0.4016,NDCG@5:0.2848) test=(HR@5:0.3363,NDCG@5:0.2303) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 26    loss=0.0468 [1.6 s]	 dev=(HR@5:0.4019,NDCG@5:0.2862) test=(HR@5:0.3386,NDCG@5:0.2320) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 27    loss=0.0448 [1.6 s]	 dev=(HR@5:0.4024,NDCG@5:0.2870) test=(HR@5:0.3373,NDCG@5:0.2316) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 28    loss=0.0425 [1.5 s]	 dev=(HR@5:0.4032,NDCG@5:0.2879) test=(HR@5:0.3389,NDCG@5:0.2327) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 29    loss=0.0408 [1.6 s]	 dev=(HR@5:0.4055,NDCG@5:0.2885) test=(HR@5:0.3387,NDCG@5:0.2323) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 30    loss=0.0407 [1.6 s]	 dev=(HR@5:0.4056,NDCG@5:0.2886) test=(HR@5:0.3376,NDCG@5:0.2318) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 31    loss=0.0385 [1.5 s]	 dev=(HR@5:0.4079,NDCG@5:0.2906) test=(HR@5:0.3390,NDCG@5:0.2332) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 32    loss=0.0375 [1.6 s]	 dev=(HR@5:0.4066,NDCG@5:0.2903) test=(HR@5:0.3393,NDCG@5:0.2338) [0.3 s] 
+INFO:root:Epoch 33    loss=0.0373 [1.5 s]	 dev=(HR@5:0.4083,NDCG@5:0.2923) test=(HR@5:0.3423,NDCG@5:0.2354) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 34    loss=0.0358 [1.5 s]	 dev=(HR@5:0.4086,NDCG@5:0.2931) test=(HR@5:0.3444,NDCG@5:0.2366) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 35    loss=0.0359 [1.6 s]	 dev=(HR@5:0.4094,NDCG@5:0.2934) test=(HR@5:0.3440,NDCG@5:0.2366) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 36    loss=0.0350 [1.6 s]	 dev=(HR@5:0.4107,NDCG@5:0.2938) test=(HR@5:0.3433,NDCG@5:0.2361) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 37    loss=0.0345 [1.5 s]	 dev=(HR@5:0.4118,NDCG@5:0.2948) test=(HR@5:0.3453,NDCG@5:0.2375) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 38    loss=0.0340 [1.5 s]	 dev=(HR@5:0.4130,NDCG@5:0.2954) test=(HR@5:0.3444,NDCG@5:0.2366) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 39    loss=0.0335 [1.5 s]	 dev=(HR@5:0.4155,NDCG@5:0.2974) test=(HR@5:0.3477,NDCG@5:0.2396) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 40    loss=0.0339 [1.6 s]	 dev=(HR@5:0.4167,NDCG@5:0.2976) test=(HR@5:0.3461,NDCG@5:0.2392) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 41    loss=0.0324 [1.5 s]	 dev=(HR@5:0.4177,NDCG@5:0.2989) test=(HR@5:0.3469,NDCG@5:0.2390) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 42    loss=0.0321 [1.5 s]	 dev=(HR@5:0.4164,NDCG@5:0.2977) test=(HR@5:0.3470,NDCG@5:0.2390) [0.3 s] 
+INFO:root:Epoch 43    loss=0.0318 [1.6 s]	 dev=(HR@5:0.4174,NDCG@5:0.2994) test=(HR@5:0.3478,NDCG@5:0.2395) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 44    loss=0.0317 [1.6 s]	 dev=(HR@5:0.4189,NDCG@5:0.2997) test=(HR@5:0.3504,NDCG@5:0.2414) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 45    loss=0.0311 [1.5 s]	 dev=(HR@5:0.4182,NDCG@5:0.2994) test=(HR@5:0.3501,NDCG@5:0.2409) [0.3 s] 
+INFO:root:Epoch 46    loss=0.0315 [1.6 s]	 dev=(HR@5:0.4173,NDCG@5:0.2992) test=(HR@5:0.3508,NDCG@5:0.2415) [0.3 s] 
+INFO:root:Epoch 47    loss=0.0312 [1.6 s]	 dev=(HR@5:0.4181,NDCG@5:0.2997) test=(HR@5:0.3516,NDCG@5:0.2423) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 48    loss=0.0304 [1.6 s]	 dev=(HR@5:0.4184,NDCG@5:0.3002) test=(HR@5:0.3534,NDCG@5:0.2432) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 49    loss=0.0306 [1.6 s]	 dev=(HR@5:0.4196,NDCG@5:0.3009) test=(HR@5:0.3523,NDCG@5:0.2422) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 50    loss=0.0304 [1.6 s]	 dev=(HR@5:0.4192,NDCG@5:0.3005) test=(HR@5:0.3523,NDCG@5:0.2426) [0.3 s] 
+INFO:root:Epoch 51    loss=0.0301 [1.6 s]	 dev=(HR@5:0.4182,NDCG@5:0.3003) test=(HR@5:0.3521,NDCG@5:0.2423) [0.4 s] 
+INFO:root:Epoch 52    loss=0.0298 [1.5 s]	 dev=(HR@5:0.4200,NDCG@5:0.3012) test=(HR@5:0.3537,NDCG@5:0.2435) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 53    loss=0.0294 [1.5 s]	 dev=(HR@5:0.4193,NDCG@5:0.3013) test=(HR@5:0.3547,NDCG@5:0.2433) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 54    loss=0.0294 [1.5 s]	 dev=(HR@5:0.4182,NDCG@5:0.3004) test=(HR@5:0.3538,NDCG@5:0.2421) [0.3 s] 
+INFO:root:Epoch 55    loss=0.0291 [1.5 s]	 dev=(HR@5:0.4189,NDCG@5:0.3015) test=(HR@5:0.3532,NDCG@5:0.2423) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 56    loss=0.0296 [1.5 s]	 dev=(HR@5:0.4195,NDCG@5:0.3026) test=(HR@5:0.3522,NDCG@5:0.2415) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 57    loss=0.0295 [1.5 s]	 dev=(HR@5:0.4198,NDCG@5:0.3032) test=(HR@5:0.3516,NDCG@5:0.2415) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 58    loss=0.0287 [1.4 s]	 dev=(HR@5:0.4220,NDCG@5:0.3039) test=(HR@5:0.3520,NDCG@5:0.2420) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 59    loss=0.0290 [1.5 s]	 dev=(HR@5:0.4209,NDCG@5:0.3038) test=(HR@5:0.3541,NDCG@5:0.2436) [0.3 s] 
+INFO:root:Epoch 60    loss=0.0292 [1.6 s]	 dev=(HR@5:0.4227,NDCG@5:0.3046) test=(HR@5:0.3564,NDCG@5:0.2448) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 61    loss=0.0284 [1.6 s]	 dev=(HR@5:0.4229,NDCG@5:0.3046) test=(HR@5:0.3560,NDCG@5:0.2450) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 62    loss=0.0289 [1.6 s]	 dev=(HR@5:0.4216,NDCG@5:0.3042) test=(HR@5:0.3555,NDCG@5:0.2447) [0.3 s] 
+INFO:root:Epoch 63    loss=0.0287 [1.6 s]	 dev=(HR@5:0.4215,NDCG@5:0.3035) test=(HR@5:0.3570,NDCG@5:0.2459) [0.3 s] 
+INFO:root:Epoch 64    loss=0.0289 [1.5 s]	 dev=(HR@5:0.4220,NDCG@5:0.3041) test=(HR@5:0.3566,NDCG@5:0.2463) [0.3 s] 
+INFO:root:Epoch 65    loss=0.0279 [1.6 s]	 dev=(HR@5:0.4218,NDCG@5:0.3040) test=(HR@5:0.3566,NDCG@5:0.2463) [0.3 s] 
+INFO:root:Epoch 66    loss=0.0286 [1.6 s]	 dev=(HR@5:0.4225,NDCG@5:0.3044) test=(HR@5:0.3581,NDCG@5:0.2457) [0.4 s] 
+INFO:root:Epoch 67    loss=0.0285 [1.5 s]	 dev=(HR@5:0.4235,NDCG@5:0.3047) test=(HR@5:0.3550,NDCG@5:0.2447) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 68    loss=0.0283 [1.6 s]	 dev=(HR@5:0.4232,NDCG@5:0.3045) test=(HR@5:0.3554,NDCG@5:0.2444) [0.3 s] 
+INFO:root:Epoch 69    loss=0.0275 [1.5 s]	 dev=(HR@5:0.4243,NDCG@5:0.3058) test=(HR@5:0.3553,NDCG@5:0.2446) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 70    loss=0.0282 [1.6 s]	 dev=(HR@5:0.4247,NDCG@5:0.3064) test=(HR@5:0.3564,NDCG@5:0.2458) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 71    loss=0.0276 [1.5 s]	 dev=(HR@5:0.4250,NDCG@5:0.3061) test=(HR@5:0.3572,NDCG@5:0.2461) [0.3 s] 
+INFO:root:Epoch 72    loss=0.0275 [1.5 s]	 dev=(HR@5:0.4251,NDCG@5:0.3063) test=(HR@5:0.3553,NDCG@5:0.2451) [0.3 s] 
+INFO:root:Epoch 73    loss=0.0274 [1.6 s]	 dev=(HR@5:0.4265,NDCG@5:0.3070) test=(HR@5:0.3575,NDCG@5:0.2462) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 74    loss=0.0274 [1.6 s]	 dev=(HR@5:0.4281,NDCG@5:0.3076) test=(HR@5:0.3590,NDCG@5:0.2465) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 75    loss=0.0281 [1.4 s]	 dev=(HR@5:0.4279,NDCG@5:0.3079) test=(HR@5:0.3578,NDCG@5:0.2466) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 76    loss=0.0277 [1.5 s]	 dev=(HR@5:0.4265,NDCG@5:0.3074) test=(HR@5:0.3576,NDCG@5:0.2463) [0.3 s] 
+INFO:root:Epoch 77    loss=0.0272 [1.5 s]	 dev=(HR@5:0.4269,NDCG@5:0.3083) test=(HR@5:0.3582,NDCG@5:0.2469) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 78    loss=0.0278 [1.5 s]	 dev=(HR@5:0.4262,NDCG@5:0.3070) test=(HR@5:0.3568,NDCG@5:0.2459) [0.3 s] 
+INFO:root:Epoch 79    loss=0.0272 [1.5 s]	 dev=(HR@5:0.4257,NDCG@5:0.3072) test=(HR@5:0.3569,NDCG@5:0.2456) [0.3 s] 
+INFO:root:Epoch 80    loss=0.0273 [1.5 s]	 dev=(HR@5:0.4267,NDCG@5:0.3078) test=(HR@5:0.3575,NDCG@5:0.2462) [0.3 s] 
+INFO:root:Epoch 81    loss=0.0274 [1.5 s]	 dev=(HR@5:0.4275,NDCG@5:0.3087) test=(HR@5:0.3592,NDCG@5:0.2471) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 82    loss=0.0274 [1.6 s]	 dev=(HR@5:0.4267,NDCG@5:0.3083) test=(HR@5:0.3573,NDCG@5:0.2468) [0.3 s] 
+INFO:root:Epoch 83    loss=0.0269 [1.5 s]	 dev=(HR@5:0.4265,NDCG@5:0.3083) test=(HR@5:0.3593,NDCG@5:0.2478) [0.3 s] 
+INFO:root:Epoch 84    loss=0.0266 [1.6 s]	 dev=(HR@5:0.4271,NDCG@5:0.3090) test=(HR@5:0.3603,NDCG@5:0.2491) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 85    loss=0.0269 [1.6 s]	 dev=(HR@5:0.4271,NDCG@5:0.3091) test=(HR@5:0.3607,NDCG@5:0.2494) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 86    loss=0.0272 [1.5 s]	 dev=(HR@5:0.4297,NDCG@5:0.3099) test=(HR@5:0.3605,NDCG@5:0.2487) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 87    loss=0.0268 [1.6 s]	 dev=(HR@5:0.4274,NDCG@5:0.3091) test=(HR@5:0.3587,NDCG@5:0.2487) [0.3 s] 
+INFO:root:Epoch 88    loss=0.0269 [1.6 s]	 dev=(HR@5:0.4270,NDCG@5:0.3086) test=(HR@5:0.3588,NDCG@5:0.2482) [0.3 s] 
+INFO:root:Epoch 89    loss=0.0269 [1.5 s]	 dev=(HR@5:0.4275,NDCG@5:0.3088) test=(HR@5:0.3591,NDCG@5:0.2480) [0.4 s] 
+INFO:root:Epoch 90    loss=0.0259 [1.5 s]	 dev=(HR@5:0.4275,NDCG@5:0.3094) test=(HR@5:0.3590,NDCG@5:0.2484) [0.3 s] 
+INFO:root:Epoch 91    loss=0.0267 [1.5 s]	 dev=(HR@5:0.4278,NDCG@5:0.3094) test=(HR@5:0.3601,NDCG@5:0.2494) [0.3 s] 
+INFO:root:Epoch 92    loss=0.0267 [1.5 s]	 dev=(HR@5:0.4291,NDCG@5:0.3107) test=(HR@5:0.3619,NDCG@5:0.2504) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 93    loss=0.0266 [1.6 s]	 dev=(HR@5:0.4291,NDCG@5:0.3104) test=(HR@5:0.3608,NDCG@5:0.2504) [0.3 s] 
+INFO:root:Epoch 94    loss=0.0260 [1.5 s]	 dev=(HR@5:0.4277,NDCG@5:0.3096) test=(HR@5:0.3602,NDCG@5:0.2497) [0.3 s] 
+INFO:root:Epoch 95    loss=0.0261 [1.5 s]	 dev=(HR@5:0.4299,NDCG@5:0.3108) test=(HR@5:0.3594,NDCG@5:0.2493) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 96    loss=0.0263 [1.4 s]	 dev=(HR@5:0.4295,NDCG@5:0.3105) test=(HR@5:0.3613,NDCG@5:0.2496) [0.4 s] 
+INFO:root:Epoch 97    loss=0.0267 [1.6 s]	 dev=(HR@5:0.4293,NDCG@5:0.3104) test=(HR@5:0.3591,NDCG@5:0.2493) [0.4 s] 
+INFO:root:Epoch 98    loss=0.0260 [1.4 s]	 dev=(HR@5:0.4294,NDCG@5:0.3118) test=(HR@5:0.3594,NDCG@5:0.2497) [0.3 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 99    loss=0.0260 [1.5 s]	 dev=(HR@5:0.4287,NDCG@5:0.3112) test=(HR@5:0.3598,NDCG@5:0.2498) [0.3 s] 
+INFO:root:Epoch 100   loss=0.0260 [1.5 s]	 dev=(HR@5:0.4288,NDCG@5:0.3112) test=(HR@5:0.3582,NDCG@5:0.2497) [0.3 s] 
+INFO:root:
+Best Iter(dev)=   98	 dev=(HR@5:0.4294,NDCG@5:0.3118) test=(HR@5:0.3594,NDCG@5:0.2497) [191.7 s] 
+INFO:root:Load model from ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__lr=0.001__l2=1e-06.pt
+INFO:root:
+Test After Training: (HR@10:0.4703,HR@5:0.3594,NDCG@10:0.2859,NDCG@5:0.2497)
+INFO:root:
+--------------------------------------------- END: 2020-11-02 22:56:57 ---------------------------------------------
+INFO:root:Namespace(model_name='BPR')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-03 11:17:04 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0.2                 
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-06               
+ load            | 0                   
+ lr              | 0.001               
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ topk            | [5,10]              
+========================================
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/BaseReader.pkl
+INFO:root:#params: 1503970
+INFO:root:BPR(
+  (u_embeddings): Embedding(14681, 64)
+  (i_embeddings): Embedding(8457, 64)
+  (user_bias): Embedding(14681, 1)
+  (item_bias): Embedding(8457, 1)
+)
+INFO:root:Test Before Training: (HR@10:0.1086,HR@5:0.0571,NDCG@10:0.0495,NDCG@5:0.0330)
+INFO:root:Optimizer: Adam
+INFO:root:Early stop manually
+INFO:root:Namespace(model_name='BPR')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-03 11:18:10 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0.2                 
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-06               
+ load            | 0                   
+ lr              | 0.001               
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ topk            | [5,10]              
+========================================
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/BaseReader.pkl
+INFO:root:#params: 1503970
+INFO:root:BPR(
+  (u_embeddings): Embedding(14681, 64)
+  (i_embeddings): Embedding(8457, 64)
+  (user_bias): Embedding(14681, 1)
+  (item_bias): Embedding(8457, 1)
+)
+INFO:root:Test Before Training: (HR@10:0.1086,HR@5:0.0571,NDCG@10:0.0495,NDCG@5:0.0330)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6541 [4.5 s]	 dev=(HR@5:0.2840,NDCG@5:0.1860) test=(HR@5:0.2462,NDCG@5:0.1539) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 2     loss=0.5103 [6.1 s]	 dev=(HR@5:0.2951,NDCG@5:0.1950) test=(HR@5:0.2627,NDCG@5:0.1663) [0.8 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 3     loss=0.4433 [6.0 s]	 dev=(HR@5:0.3037,NDCG@5:0.2042) test=(HR@5:0.2660,NDCG@5:0.1717) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 4     loss=0.4022 [6.1 s]	 dev=(HR@5:0.3160,NDCG@5:0.2161) test=(HR@5:0.2710,NDCG@5:0.1785) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 5     loss=0.3629 [6.0 s]	 dev=(HR@5:0.3274,NDCG@5:0.2247) test=(HR@5:0.2766,NDCG@5:0.1844) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 6     loss=0.3263 [6.2 s]	 dev=(HR@5:0.3337,NDCG@5:0.2319) test=(HR@5:0.2840,NDCG@5:0.1921) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 7     loss=0.2923 [6.6 s]	 dev=(HR@5:0.3442,NDCG@5:0.2412) test=(HR@5:0.2899,NDCG@5:0.1973) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 8     loss=0.2587 [6.7 s]	 dev=(HR@5:0.3527,NDCG@5:0.2476) test=(HR@5:0.2970,NDCG@5:0.2023) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 9     loss=0.2278 [7.1 s]	 dev=(HR@5:0.3595,NDCG@5:0.2538) test=(HR@5:0.3021,NDCG@5:0.2055) [1.1 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 10    loss=0.2023 [6.7 s]	 dev=(HR@5:0.3629,NDCG@5:0.2575) test=(HR@5:0.3052,NDCG@5:0.2090) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 11    loss=0.1779 [6.7 s]	 dev=(HR@5:0.3701,NDCG@5:0.2634) test=(HR@5:0.3104,NDCG@5:0.2126) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 12    loss=0.1576 [6.9 s]	 dev=(HR@5:0.3741,NDCG@5:0.2660) test=(HR@5:0.3141,NDCG@5:0.2141) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 13    loss=0.1394 [7.1 s]	 dev=(HR@5:0.3772,NDCG@5:0.2681) test=(HR@5:0.3169,NDCG@5:0.2163) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 14    loss=0.1241 [6.9 s]	 dev=(HR@5:0.3807,NDCG@5:0.2705) test=(HR@5:0.3200,NDCG@5:0.2196) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 15    loss=0.1110 [7.0 s]	 dev=(HR@5:0.3824,NDCG@5:0.2726) test=(HR@5:0.3211,NDCG@5:0.2208) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 16    loss=0.1001 [7.2 s]	 dev=(HR@5:0.3848,NDCG@5:0.2748) test=(HR@5:0.3242,NDCG@5:0.2224) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 17    loss=0.0900 [6.7 s]	 dev=(HR@5:0.3871,NDCG@5:0.2762) test=(HR@5:0.3259,NDCG@5:0.2232) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 18    loss=0.0812 [7.0 s]	 dev=(HR@5:0.3897,NDCG@5:0.2780) test=(HR@5:0.3272,NDCG@5:0.2245) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 19    loss=0.0750 [6.6 s]	 dev=(HR@5:0.3887,NDCG@5:0.2775) test=(HR@5:0.3273,NDCG@5:0.2256) [1.0 s] 
+INFO:root:Epoch 20    loss=0.0682 [7.0 s]	 dev=(HR@5:0.3907,NDCG@5:0.2789) test=(HR@5:0.3312,NDCG@5:0.2276) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 21    loss=0.0635 [6.9 s]	 dev=(HR@5:0.3916,NDCG@5:0.2796) test=(HR@5:0.3303,NDCG@5:0.2279) [1.1 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 22    loss=0.0590 [7.0 s]	 dev=(HR@5:0.3937,NDCG@5:0.2815) test=(HR@5:0.3331,NDCG@5:0.2290) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 23    loss=0.0546 [6.8 s]	 dev=(HR@5:0.3970,NDCG@5:0.2823) test=(HR@5:0.3336,NDCG@5:0.2286) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 24    loss=0.0523 [6.6 s]	 dev=(HR@5:0.3987,NDCG@5:0.2835) test=(HR@5:0.3361,NDCG@5:0.2299) [1.1 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 25    loss=0.0496 [7.0 s]	 dev=(HR@5:0.4016,NDCG@5:0.2848) test=(HR@5:0.3363,NDCG@5:0.2303) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 26    loss=0.0468 [6.5 s]	 dev=(HR@5:0.4019,NDCG@5:0.2862) test=(HR@5:0.3386,NDCG@5:0.2320) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 27    loss=0.0448 [7.0 s]	 dev=(HR@5:0.4024,NDCG@5:0.2870) test=(HR@5:0.3373,NDCG@5:0.2316) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 28    loss=0.0425 [6.8 s]	 dev=(HR@5:0.4032,NDCG@5:0.2879) test=(HR@5:0.3389,NDCG@5:0.2327) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 29    loss=0.0408 [6.9 s]	 dev=(HR@5:0.4055,NDCG@5:0.2885) test=(HR@5:0.3387,NDCG@5:0.2323) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 30    loss=0.0407 [6.9 s]	 dev=(HR@5:0.4056,NDCG@5:0.2886) test=(HR@5:0.3376,NDCG@5:0.2318) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 31    loss=0.0385 [7.1 s]	 dev=(HR@5:0.4079,NDCG@5:0.2906) test=(HR@5:0.3390,NDCG@5:0.2332) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 32    loss=0.0375 [7.1 s]	 dev=(HR@5:0.4066,NDCG@5:0.2903) test=(HR@5:0.3393,NDCG@5:0.2338) [1.1 s] 
+INFO:root:Epoch 33    loss=0.0373 [6.7 s]	 dev=(HR@5:0.4083,NDCG@5:0.2923) test=(HR@5:0.3423,NDCG@5:0.2354) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 34    loss=0.0358 [7.0 s]	 dev=(HR@5:0.4086,NDCG@5:0.2931) test=(HR@5:0.3444,NDCG@5:0.2366) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 35    loss=0.0359 [7.2 s]	 dev=(HR@5:0.4094,NDCG@5:0.2934) test=(HR@5:0.3440,NDCG@5:0.2366) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 36    loss=0.0350 [6.9 s]	 dev=(HR@5:0.4107,NDCG@5:0.2938) test=(HR@5:0.3433,NDCG@5:0.2361) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 37    loss=0.0345 [6.7 s]	 dev=(HR@5:0.4118,NDCG@5:0.2948) test=(HR@5:0.3453,NDCG@5:0.2375) [1.2 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 38    loss=0.0340 [7.1 s]	 dev=(HR@5:0.4130,NDCG@5:0.2954) test=(HR@5:0.3444,NDCG@5:0.2366) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 39    loss=0.0335 [6.9 s]	 dev=(HR@5:0.4155,NDCG@5:0.2974) test=(HR@5:0.3477,NDCG@5:0.2396) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 40    loss=0.0339 [6.7 s]	 dev=(HR@5:0.4167,NDCG@5:0.2976) test=(HR@5:0.3461,NDCG@5:0.2392) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 41    loss=0.0324 [7.1 s]	 dev=(HR@5:0.4177,NDCG@5:0.2989) test=(HR@5:0.3469,NDCG@5:0.2390) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Namespace(model_name='BPR')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-03 11:23:41 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0.2                 
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-06               
+ load            | 0                   
+ lr              | 0.001               
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ topk            | [5,10]              
+========================================
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/BaseReader.pkl
+INFO:root:Epoch 42    loss=0.0321 [6.9 s]	 dev=(HR@5:0.4164,NDCG@5:0.2977) test=(HR@5:0.3470,NDCG@5:0.2390) [1.2 s] 
+INFO:root:#params: 1503970
+INFO:root:BPR(
+  (u_embeddings): Embedding(14681, 64)
+  (i_embeddings): Embedding(8457, 64)
+  (user_bias): Embedding(14681, 1)
+  (item_bias): Embedding(8457, 1)
+)
+INFO:root:Test Before Training: (HR@10:0.1086,HR@5:0.0571,NDCG@10:0.0495,NDCG@5:0.0330)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 43    loss=0.0318 [7.2 s]	 dev=(HR@5:0.4174,NDCG@5:0.2994) test=(HR@5:0.3478,NDCG@5:0.2395) [1.1 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 1     loss=0.6541 [7.4 s]	 dev=(HR@5:0.2840,NDCG@5:0.1860) test=(HR@5:0.2462,NDCG@5:0.1539) [1.1 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 44    loss=0.0317 [7.7 s]	 dev=(HR@5:0.4189,NDCG@5:0.2997) test=(HR@5:0.3504,NDCG@5:0.2414) [1.1 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 2     loss=0.5103 [6.6 s]	 dev=(HR@5:0.2951,NDCG@5:0.1950) test=(HR@5:0.2627,NDCG@5:0.1663) [1.1 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 45    loss=0.0311 [7.5 s]	 dev=(HR@5:0.4182,NDCG@5:0.2994) test=(HR@5:0.3501,NDCG@5:0.2409) [1.1 s] 
+INFO:root:Epoch 3     loss=0.4433 [7.0 s]	 dev=(HR@5:0.3037,NDCG@5:0.2042) test=(HR@5:0.2660,NDCG@5:0.1717) [1.1 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 46    loss=0.0315 [7.2 s]	 dev=(HR@5:0.4173,NDCG@5:0.2992) test=(HR@5:0.3508,NDCG@5:0.2415) [1.1 s] 
+INFO:root:Epoch 4     loss=0.4022 [7.2 s]	 dev=(HR@5:0.3160,NDCG@5:0.2161) test=(HR@5:0.2710,NDCG@5:0.1785) [1.1 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 47    loss=0.0312 [7.5 s]	 dev=(HR@5:0.4181,NDCG@5:0.2997) test=(HR@5:0.3516,NDCG@5:0.2423) [1.1 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 5     loss=0.3629 [6.5 s]	 dev=(HR@5:0.3274,NDCG@5:0.2247) test=(HR@5:0.2766,NDCG@5:0.1844) [1.1 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 48    loss=0.0304 [7.6 s]	 dev=(HR@5:0.4184,NDCG@5:0.3002) test=(HR@5:0.3534,NDCG@5:0.2432) [1.1 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 6     loss=0.3263 [7.4 s]	 dev=(HR@5:0.3337,NDCG@5:0.2319) test=(HR@5:0.2840,NDCG@5:0.1921) [1.1 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 49    loss=0.0306 [7.6 s]	 dev=(HR@5:0.4196,NDCG@5:0.3009) test=(HR@5:0.3523,NDCG@5:0.2422) [1.1 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 7     loss=0.2923 [6.8 s]	 dev=(HR@5:0.3442,NDCG@5:0.2412) test=(HR@5:0.2899,NDCG@5:0.1973) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 50    loss=0.0304 [7.4 s]	 dev=(HR@5:0.4192,NDCG@5:0.3005) test=(HR@5:0.3523,NDCG@5:0.2426) [1.1 s] 
+INFO:root:Epoch 8     loss=0.2587 [7.2 s]	 dev=(HR@5:0.3527,NDCG@5:0.2476) test=(HR@5:0.2970,NDCG@5:0.2023) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 51    loss=0.0301 [7.7 s]	 dev=(HR@5:0.4182,NDCG@5:0.3003) test=(HR@5:0.3521,NDCG@5:0.2423) [1.1 s] 
+INFO:root:Epoch 9     loss=0.2278 [7.3 s]	 dev=(HR@5:0.3595,NDCG@5:0.2538) test=(HR@5:0.3021,NDCG@5:0.2055) [1.1 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 52    loss=0.0298 [7.4 s]	 dev=(HR@5:0.4200,NDCG@5:0.3012) test=(HR@5:0.3537,NDCG@5:0.2435) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 10    loss=0.2023 [6.6 s]	 dev=(HR@5:0.3629,NDCG@5:0.2575) test=(HR@5:0.3052,NDCG@5:0.2090) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 53    loss=0.0294 [6.9 s]	 dev=(HR@5:0.4193,NDCG@5:0.3013) test=(HR@5:0.3547,NDCG@5:0.2433) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 11    loss=0.1779 [6.9 s]	 dev=(HR@5:0.3701,NDCG@5:0.2634) test=(HR@5:0.3104,NDCG@5:0.2126) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 12    loss=0.1576 [6.1 s]	 dev=(HR@5:0.3741,NDCG@5:0.2660) test=(HR@5:0.3141,NDCG@5:0.2141) [1.0 s] 
+INFO:root:Epoch 54    loss=0.0294 [6.7 s]	 dev=(HR@5:0.4182,NDCG@5:0.3004) test=(HR@5:0.3538,NDCG@5:0.2421) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 13    loss=0.1394 [1.8 s]	 dev=(HR@5:0.3772,NDCG@5:0.2681) test=(HR@5:0.3169,NDCG@5:0.2163) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 55    loss=0.0291 [8.1 s]	 dev=(HR@5:0.4189,NDCG@5:0.3015) test=(HR@5:0.3532,NDCG@5:0.2423) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 14    loss=0.1241 [6.8 s]	 dev=(HR@5:0.3807,NDCG@5:0.2705) test=(HR@5:0.3200,NDCG@5:0.2196) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 56    loss=0.0296 [6.8 s]	 dev=(HR@5:0.4195,NDCG@5:0.3026) test=(HR@5:0.3522,NDCG@5:0.2415) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 15    loss=0.1110 [6.7 s]	 dev=(HR@5:0.3824,NDCG@5:0.2726) test=(HR@5:0.3211,NDCG@5:0.2208) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 57    loss=0.0295 [6.8 s]	 dev=(HR@5:0.4198,NDCG@5:0.3032) test=(HR@5:0.3516,NDCG@5:0.2415) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 16    loss=0.1001 [6.6 s]	 dev=(HR@5:0.3848,NDCG@5:0.2748) test=(HR@5:0.3242,NDCG@5:0.2224) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 58    loss=0.0287 [6.8 s]	 dev=(HR@5:0.4220,NDCG@5:0.3039) test=(HR@5:0.3520,NDCG@5:0.2420) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 17    loss=0.0900 [6.6 s]	 dev=(HR@5:0.3871,NDCG@5:0.2762) test=(HR@5:0.3259,NDCG@5:0.2232) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 59    loss=0.0290 [6.6 s]	 dev=(HR@5:0.4209,NDCG@5:0.3038) test=(HR@5:0.3541,NDCG@5:0.2436) [1.0 s] 
+INFO:root:Epoch 18    loss=0.0812 [6.4 s]	 dev=(HR@5:0.3897,NDCG@5:0.2780) test=(HR@5:0.3272,NDCG@5:0.2245) [1.0 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Early stop manually
+INFO:root:Epoch 60    loss=0.0292 [6.6 s]	 dev=(HR@5:0.4227,NDCG@5:0.3046) test=(HR@5:0.3564,NDCG@5:0.2448) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 61    loss=0.0284 [6.0 s]	 dev=(HR@5:0.4229,NDCG@5:0.3046) test=(HR@5:0.3560,NDCG@5:0.2450) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 62    loss=0.0289 [6.3 s]	 dev=(HR@5:0.4216,NDCG@5:0.3042) test=(HR@5:0.3555,NDCG@5:0.2447) [0.9 s] 
+INFO:root:Epoch 63    loss=0.0287 [6.2 s]	 dev=(HR@5:0.4215,NDCG@5:0.3035) test=(HR@5:0.3570,NDCG@5:0.2459) [0.8 s] 
+INFO:root:Epoch 64    loss=0.0289 [6.4 s]	 dev=(HR@5:0.4220,NDCG@5:0.3041) test=(HR@5:0.3566,NDCG@5:0.2463) [0.9 s] 
+INFO:root:Epoch 65    loss=0.0279 [6.1 s]	 dev=(HR@5:0.4218,NDCG@5:0.3040) test=(HR@5:0.3566,NDCG@5:0.2463) [0.9 s] 
+INFO:root:Epoch 66    loss=0.0286 [6.1 s]	 dev=(HR@5:0.4225,NDCG@5:0.3044) test=(HR@5:0.3581,NDCG@5:0.2457) [1.0 s] 
+INFO:root:Epoch 67    loss=0.0285 [6.3 s]	 dev=(HR@5:0.4235,NDCG@5:0.3047) test=(HR@5:0.3550,NDCG@5:0.2447) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 68    loss=0.0283 [5.9 s]	 dev=(HR@5:0.4232,NDCG@5:0.3045) test=(HR@5:0.3554,NDCG@5:0.2444) [1.0 s] 
+INFO:root:Epoch 69    loss=0.0275 [6.2 s]	 dev=(HR@5:0.4243,NDCG@5:0.3058) test=(HR@5:0.3553,NDCG@5:0.2446) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 70    loss=0.0282 [6.5 s]	 dev=(HR@5:0.4247,NDCG@5:0.3064) test=(HR@5:0.3564,NDCG@5:0.2458) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 71    loss=0.0276 [6.3 s]	 dev=(HR@5:0.4250,NDCG@5:0.3061) test=(HR@5:0.3572,NDCG@5:0.2461) [0.9 s] 
+INFO:root:Epoch 72    loss=0.0275 [5.9 s]	 dev=(HR@5:0.4251,NDCG@5:0.3063) test=(HR@5:0.3553,NDCG@5:0.2451) [0.9 s] 
+INFO:root:Epoch 73    loss=0.0274 [5.8 s]	 dev=(HR@5:0.4265,NDCG@5:0.3070) test=(HR@5:0.3575,NDCG@5:0.2462) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 74    loss=0.0274 [6.4 s]	 dev=(HR@5:0.4281,NDCG@5:0.3076) test=(HR@5:0.3590,NDCG@5:0.2465) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 75    loss=0.0281 [5.6 s]	 dev=(HR@5:0.4279,NDCG@5:0.3079) test=(HR@5:0.3578,NDCG@5:0.2466) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 76    loss=0.0277 [6.4 s]	 dev=(HR@5:0.4265,NDCG@5:0.3074) test=(HR@5:0.3576,NDCG@5:0.2463) [0.8 s] 
+INFO:root:Epoch 77    loss=0.0272 [6.3 s]	 dev=(HR@5:0.4269,NDCG@5:0.3083) test=(HR@5:0.3582,NDCG@5:0.2469) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 78    loss=0.0278 [6.1 s]	 dev=(HR@5:0.4262,NDCG@5:0.3070) test=(HR@5:0.3568,NDCG@5:0.2459) [0.9 s] 
+INFO:root:Epoch 79    loss=0.0272 [6.2 s]	 dev=(HR@5:0.4257,NDCG@5:0.3072) test=(HR@5:0.3569,NDCG@5:0.2456) [0.9 s] 
+INFO:root:Epoch 80    loss=0.0273 [6.3 s]	 dev=(HR@5:0.4267,NDCG@5:0.3078) test=(HR@5:0.3575,NDCG@5:0.2462) [0.8 s] 
+INFO:root:Epoch 81    loss=0.0274 [5.7 s]	 dev=(HR@5:0.4275,NDCG@5:0.3087) test=(HR@5:0.3592,NDCG@5:0.2471) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 82    loss=0.0274 [5.8 s]	 dev=(HR@5:0.4267,NDCG@5:0.3083) test=(HR@5:0.3573,NDCG@5:0.2468) [1.0 s] 
+INFO:root:Epoch 83    loss=0.0269 [6.4 s]	 dev=(HR@5:0.4265,NDCG@5:0.3083) test=(HR@5:0.3593,NDCG@5:0.2478) [0.9 s] 
+INFO:root:Epoch 84    loss=0.0266 [6.2 s]	 dev=(HR@5:0.4271,NDCG@5:0.3090) test=(HR@5:0.3603,NDCG@5:0.2491) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 85    loss=0.0269 [6.0 s]	 dev=(HR@5:0.4271,NDCG@5:0.3091) test=(HR@5:0.3607,NDCG@5:0.2494) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 86    loss=0.0272 [6.5 s]	 dev=(HR@5:0.4297,NDCG@5:0.3099) test=(HR@5:0.3605,NDCG@5:0.2487) [0.9 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 87    loss=0.0268 [6.1 s]	 dev=(HR@5:0.4274,NDCG@5:0.3091) test=(HR@5:0.3587,NDCG@5:0.2487) [1.0 s] 
+INFO:root:Epoch 88    loss=0.0269 [6.2 s]	 dev=(HR@5:0.4270,NDCG@5:0.3086) test=(HR@5:0.3588,NDCG@5:0.2482) [0.9 s] 
+INFO:root:Epoch 89    loss=0.0269 [6.1 s]	 dev=(HR@5:0.4275,NDCG@5:0.3088) test=(HR@5:0.3591,NDCG@5:0.2480) [1.1 s] 
+INFO:root:Epoch 90    loss=0.0259 [6.2 s]	 dev=(HR@5:0.4275,NDCG@5:0.3094) test=(HR@5:0.3590,NDCG@5:0.2484) [0.8 s] 
+INFO:root:Epoch 91    loss=0.0267 [5.6 s]	 dev=(HR@5:0.4278,NDCG@5:0.3094) test=(HR@5:0.3601,NDCG@5:0.2494) [0.9 s] 
+INFO:root:Epoch 92    loss=0.0267 [5.5 s]	 dev=(HR@5:0.4291,NDCG@5:0.3107) test=(HR@5:0.3619,NDCG@5:0.2504) [0.8 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 93    loss=0.0266 [5.7 s]	 dev=(HR@5:0.4291,NDCG@5:0.3104) test=(HR@5:0.3608,NDCG@5:0.2504) [0.8 s] 
+INFO:root:Epoch 94    loss=0.0260 [5.1 s]	 dev=(HR@5:0.4277,NDCG@5:0.3096) test=(HR@5:0.3602,NDCG@5:0.2497) [0.8 s] 
+INFO:root:Epoch 95    loss=0.0261 [5.6 s]	 dev=(HR@5:0.4299,NDCG@5:0.3108) test=(HR@5:0.3594,NDCG@5:0.2493) [0.8 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 96    loss=0.0263 [5.5 s]	 dev=(HR@5:0.4295,NDCG@5:0.3105) test=(HR@5:0.3613,NDCG@5:0.2496) [0.9 s] 
+INFO:root:Epoch 97    loss=0.0267 [5.7 s]	 dev=(HR@5:0.4293,NDCG@5:0.3104) test=(HR@5:0.3591,NDCG@5:0.2493) [0.8 s] 
+INFO:root:Epoch 98    loss=0.0260 [5.5 s]	 dev=(HR@5:0.4294,NDCG@5:0.3118) test=(HR@5:0.3594,NDCG@5:0.2497) [0.8 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 99    loss=0.0260 [4.4 s]	 dev=(HR@5:0.4287,NDCG@5:0.3112) test=(HR@5:0.3598,NDCG@5:0.2498) [0.7 s] 
+INFO:root:Epoch 100   loss=0.0260 [4.5 s]	 dev=(HR@5:0.4288,NDCG@5:0.3112) test=(HR@5:0.3582,NDCG@5:0.2497) [0.7 s] 
+INFO:root:
+Best Iter(dev)=   98	 dev=(HR@5:0.4294,NDCG@5:0.3118) test=(HR@5:0.3594,NDCG@5:0.2497) [750.3 s] 
+INFO:root:Load model from ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__lr=0.001__l2=1e-06.pt
+INFO:root:
+Test After Training: (HR@10:0.4703,HR@5:0.3594,NDCG@10:0.2859,NDCG@5:0.2497)
+INFO:root:
+--------------------------------------------- END: 2020-11-03 11:30:46 ---------------------------------------------
+INFO:root:Namespace(model_name='BPR')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-03 11:38:16 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0.2                 
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-06               
+ load            | 0                   
+ lr              | 0.001               
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ topk            | [5,10]              
+========================================
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/BaseReader.pkl
+INFO:root:#params: 1503970
+INFO:root:BPR(
+  (u_embeddings): Embedding(14681, 64)
+  (i_embeddings): Embedding(8457, 64)
+  (user_bias): Embedding(14681, 1)
+  (item_bias): Embedding(8457, 1)
+)
+INFO:root:Namespace(model_name='BPR')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-03 16:59:13 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0.2                 
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-06               
+ load            | 0                   
+ lr              | 0.001               
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ topk            | [5,10]              
+========================================
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/BaseReader.pkl
+INFO:root:#params: 1503970
+INFO:root:BPR(
+  (u_embeddings): Embedding(14681, 64)
+  (i_embeddings): Embedding(8457, 64)
+  (user_bias): Embedding(14681, 1)
+  (item_bias): Embedding(8457, 1)
+)
+INFO:root:Namespace(model_name='BPR')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-03 21:04:09 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0.2                 
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-06               
+ load            | 0                   
+ lr              | 0.001               
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ topk            | [5,10]              
+========================================
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/BaseReader.pkl
+INFO:root:#params: 1503970
+INFO:root:BPR(
+  (u_embeddings): Embedding(14681, 64)
+  (i_embeddings): Embedding(8457, 64)
+  (user_bias): Embedding(14681, 1)
+  (item_bias): Embedding(8457, 1)
+)
+INFO:root:Namespace(model_name='BPR')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-03 21:07:02 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0.2                 
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-06               
+ load            | 0                   
+ lr              | 0.001               
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ topk            | [5,10]              
+========================================
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/BaseReader.pkl
+INFO:root:#params: 1503970
+INFO:root:BPR(
+  (u_embeddings): Embedding(14681, 64)
+  (i_embeddings): Embedding(8457, 64)
+  (user_bias): Embedding(14681, 1)
+  (item_bias): Embedding(8457, 1)
+)
+INFO:root:Namespace(model_name='BPR')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-03 21:08:00 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0.2                 
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-06               
+ load            | 0                   
+ lr              | 0.001               
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ topk            | [5,10]              
+========================================
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/BaseReader.pkl
+INFO:root:#params: 1503970
+INFO:root:BPR(
+  (u_embeddings): Embedding(14681, 64)
+  (i_embeddings): Embedding(8457, 64)
+  (user_bias): Embedding(14681, 1)
+  (item_bias): Embedding(8457, 1)
+)
+INFO:root:Namespace(model_name='BPR')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-03 21:08:23 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0.2                 
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-06               
+ load            | 0                   
+ lr              | 0.001               
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ topk            | [5,10]              
+========================================
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/BaseReader.pkl
+INFO:root:#params: 1503970
+INFO:root:BPR(
+  (u_embeddings): Embedding(14681, 64)
+  (i_embeddings): Embedding(8457, 64)
+  (user_bias): Embedding(14681, 1)
+  (item_bias): Embedding(8457, 1)
+)
+INFO:root:Namespace(model_name='BPR')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-11 21:30:27 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0.2                 
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-06               
+ load            | 0                   
+ lr              | 0.001               
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ topk            | [5,10]              
+========================================
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/BaseReader.pkl
+INFO:root:Namespace(model_name='BPR')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-11 21:30:49 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0.2                 
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-06               
+ load            | 0                   
+ lr              | 0.001               
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ topk            | [5,10]              
+========================================
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/BaseReader.pkl
+INFO:root:Namespace(model_name='BPR')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-11 21:31:09 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0.2                 
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-06               
+ load            | 0                   
+ lr              | 0.001               
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ topk            | [5,10]              
+========================================
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/BaseReader.pkl
+INFO:root:Namespace(model_name='BPR')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-11 21:31:32 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0.2                 
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-06               
+ load            | 0                   
+ lr              | 0.001               
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ topk            | [5,10]              
+========================================
+INFO:root:# cuda devices: 1
+INFO:root:Reading data from "../data/", dataset = "Grocery_and_Gourmet_Food" 
+INFO:root:Formating data type...
+INFO:root:Constructing relation triplets...
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 14681, "# item": 8457, "# entry": 145832
+INFO:root:"# relation": 3, "# triplet": 372090
+INFO:root:Adding history info...
+INFO:root:Done! [5.91 s]
+
+INFO:root:Save corpus to ../data/Grocery_and_Gourmet_Food/BaseReader.pkl
+INFO:root:#params: 1503970
+INFO:root:BPR(
+  (u_embeddings): Embedding(14681, 64)
+  (i_embeddings): Embedding(8457, 64)
+  (user_bias): Embedding(14681, 1)
+  (item_bias): Embedding(8457, 1)
+)
+INFO:root:Test Before Training: (HR@10:0.1086,HR@5:0.0571,NDCG@10:0.0495,NDCG@5:0.0330)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6541 [1.5 s]	 dev=(HR@5:0.2840,NDCG@5:0.1860) test=(HR@5:0.2462,NDCG@5:0.1539) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Epoch 2     loss=0.5103 [1.3 s]	 dev=(HR@5:0.2951,NDCG@5:0.1950) test=(HR@5:0.2627,NDCG@5:0.1663) [0.4 s] 
+INFO:root:Save model to ../model/BPR/BPR__Grocery_and_Gourmet_Food__2019__...
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2020-11-11 21:31:48 ---------------------------------------------
