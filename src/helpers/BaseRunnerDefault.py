@@ -5,12 +5,10 @@ import gc
 import torch
 import logging
 import numpy as np
-import pandas as pd
 from time import time
 from tqdm import tqdm
 from torch.utils.data import DataLoader
 from typing import Dict, List, NoReturn
-from collections import defaultdict
 
 from utils import utils
 from models.BaseModel import BaseModel
@@ -116,8 +114,7 @@ class BaseRunner(object):
         return optimizer
 
     def train(self, model: torch.nn.Module, data_dict: Dict[str, BaseModel.Dataset]) -> NoReturn:
-        #main_metric_results, dev_results, test_results = list(), list(), list()
-        main_metric_results, test_results = list(), defaultdict(list)
+        main_metric_results, dev_results, test_results = list(), list(), list()
         self._check_time(start=True)
         try:
             for epoch in range(self.epoch):
@@ -131,41 +128,24 @@ class BaseRunner(object):
                     utils.check(model.check_list)
 
                 # Record dev and test results
-                #dev_result = self.evaluate(model, data_dict['dev'], self.topk[:1], self.metrics)
-                #test_result = self.evaluate(model, data_dict['test'], self.topk[:1], self.metrics)
-                for key in args.keys[1:]:
-                    tmp_result = self.evaluate(model, data_dict[key], self.topk[:1], self.metrics)
-                    test_results[key].append(tmp_result)
-
+                dev_result = self.evaluate(model, data_dict['dev'], self.topk[:1], self.metrics)
+                test_result = self.evaluate(model, data_dict['test'], self.topk[:1], self.metrics)
                 testing_time = self._check_time()
+                dev_results.append(dev_result)
+                test_results.append(test_result)
+                main_metric_results.append(dev_result[self.main_metric])
 
-                #dev_results.append(dev_result)
-                #test_results.append(test_result)
-
-                main_metric_results.append(test_results[args.keys[1]][self.main_metric]) # keys: ['train', 'test0', ... , 'testk']
-
-                '''
                 logging.info("Epoch {:<5} loss={:<.4f} [{:<.1f} s]\t dev=({}) test=({}) [{:<.1f} s] ".format(
                              epoch + 1, loss, training_time, utils.format_metric(dev_result),
                              utils.format_metric(test_result), testing_time))
-                '''
-
-                logging.info("Epoch {:<5} loss={:<.4f} [{:<.1f} s]\t {}=({}) {}=({}) [{:<.1f} s] ".format(
-                             epoch + 1, loss, training_time, args.keys[1],
-                             utils.format_metric(test_results[args.keys[1]]),
-                             args.keys[-1], utils.format_metric(test_results[args.keys[-1]),
-                             testing_time))
 
                 # Save model and early stop
                 if max(main_metric_results) == main_metric_results[-1] or \
                         (hasattr(model, 'stage') and model.stage == 1):
                     model.save_model()
-
-                '''
                 if self.early_stop and self.eval_termination(main_metric_results):
                     logging.info("Early stop at %d based on dev result." % (epoch + 1))
                     break
-                '''
         except KeyboardInterrupt:
             logging.info("Early stop manually")
             exit_here = input("Exit completely without evaluation? (y/n) (default n):")
@@ -175,17 +155,9 @@ class BaseRunner(object):
 
         # Find the best dev result across iterations
         best_epoch = main_metric_results.index(max(main_metric_results))
-        #logging.info(os.linesep + "Best Iter(dev)={:>5}\t dev=({}) test=({}) [{:<.1f} s] ".format(
-        #             best_epoch + 1, utils.format_metric(dev_results[best_epoch]),
-        #             utils.format_metric(test_results[best_epoch]), self.time[1] - self.time[0]))
-        logging.info(os.linesep + "Best Iter({})={:>5}\t {}=({}) {}=({}) [{:<.1f} s] ".format(
-                     best_epoch + 1, args.keys[1], args.keys[1],
-                     utils.format_metric(test_results[args.keys[1]][best_epoch]),
-                     args.keys[-1], utils.format_metric(test_results[args.keys[-1][best_epoch]),
-                     self.time[1] - self.time[0]))
-
-        pd.DataFrame(test_results).to_csv(args.result_file, index=False)
-
+        logging.info(os.linesep + "Best Iter(dev)={:>5}\t dev=({}) test=({}) [{:<.1f} s] ".format(
+                     best_epoch + 1, utils.format_metric(dev_results[best_epoch]),
+                     utils.format_metric(test_results[best_epoch]), self.time[1] - self.time[0]))
         model.load_model()
 
     def fit(self, model: torch.nn.Module, data: BaseModel.Dataset, epoch=-1) -> float:

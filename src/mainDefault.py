@@ -8,9 +8,8 @@ import argparse
 import numpy as np
 import torch
 
+from models import *
 from helpers import *
-from models.general import *
-from models.sequential import *
 from utils import utils
 
 
@@ -21,8 +20,6 @@ def parse_global_args(parser):
                         help='Logging Level, 0, 10, ..., 50')
     parser.add_argument('--log_file', type=str, default='',
                         help='Logging file path')
-    parser.add_argument('--result_file', type=str, default='',
-                        help='Result file path')
     parser.add_argument('--random_seed', type=int, default=2019,
                         help='Random seed of numpy and pytorch.')
     parser.add_argument('--load', type=int, default=0,
@@ -44,16 +41,13 @@ def main():
     np.random.seed(args.random_seed)
     torch.manual_seed(args.random_seed)
     torch.cuda.manual_seed(args.random_seed)
-    torch.backends.cudnn.deterministic = True
 
     # GPU
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
-    logging.info('cuda available: {}'.format(torch.cuda.is_available()))
-    logging.info('# cuda devices: {}'.format(torch.cuda.device_count()))
+    logging.info("# cuda devices: {}".format(torch.cuda.device_count()))
 
     # Read data
-    #corpus_path = os.path.join(args.path, args.dataset, model_name.reader + '.pkl')
-    corpus_path = os.path.join(args.path, args.dataset, args.suffix, model_name.reader + '.pkl')
+    corpus_path = os.path.join(args.path, args.dataset, model_name.reader + '.pkl')
     if not args.regenerate and os.path.exists(corpus_path):
         logging.info('Load corpus from {}'.format(corpus_path))
         corpus = pickle.load(open(corpus_path, 'rb'))
@@ -65,24 +59,23 @@ def main():
     # Define model
     model = model_name(args, corpus)
     logging.info(model)
+    model = model.double()
     model.apply(model.init_weights)
     model.actions_before_train()
-    model.to(model.device)
+    if torch.cuda.device_count() > 0:
+        model = model.cuda()
 
     # Run model
     data_dict = dict()
-    #for phase in ['train', 'dev', 'test']:
-    for phase in args.keys:
+    for phase in ['train', 'dev', 'test']:
         data_dict[phase] = model_name.Dataset(model, corpus, phase)
     runner = runner_name(args)
-    #logging.info('Test Before Training: ' + runner.print_res(model, data_dict['test']))
-    logging.info('Test Before Training: ' + runner.print_res(model, data_dict[args.keys[-1]]))
+    logging.info('Test Before Training: ' + runner.print_res(model, data_dict['test']))
     if args.load > 0:
         model.load_model()
     if args.train > 0:
         runner.train(model, data_dict)
-    #logging.info(os.linesep + 'Test After Training: ' + runner.print_res(model, data_dict['test']))
-    logging.info(os.linesep + 'Test After Training: ' + runner.print_res(model, data_dict[args.keys[-1]]))
+    logging.info(os.linesep + 'Test After Training: ' + runner.print_res(model, data_dict['test']))
 
     model.actions_after_train()
     logging.info(os.linesep + '-' * 45 + ' END: ' + utils.get_time() + ' ' + '-' * 45)
@@ -111,13 +104,10 @@ if __name__ == '__main__':
     log_file_name = '__'.join(log_args).replace(' ', '__')
     if args.log_file == '':
         args.log_file = '../log/{}/{}.txt'.format(init_args.model_name, log_file_name)
-    if args.result_file == '':
-        args.result_file = '../result/{}/{}.csv'.format(init_args.model_name, log_file_name)
     if args.model_path == '':
         args.model_path = '../model/{}/{}.pt'.format(init_args.model_name, log_file_name)
 
     utils.check_dir(args.log_file)
-    utils.check_dir(args.result_file)
     logging.basicConfig(filename=args.log_file, level=args.verbose)
     logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
     logging.info(init_args)
