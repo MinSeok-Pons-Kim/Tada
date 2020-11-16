@@ -57,7 +57,8 @@ class TiSASRec(SASRec):
 
         # Interval embedding
         interval_matrix = (t_history[:, :, None] - t_history[:, None, :]).abs()
-        interval_matrix = (interval_matrix / user_min_t.view(-1, 1, 1)).long().clamp(0, self.max_time)
+        #interval_matrix = (interval_matrix / user_min_t.view(-1, 1, 1)).long().clamp(0, self.max_time) # division runtime error
+        interval_matrix = torch.true_divide(interval_matrix, user_min_t.view(-1, 1, 1)).long().clamp(0, self.max_time)
         inter_k = self.t_k_embeddings(interval_matrix)
         inter_v = self.t_v_embeddings(interval_matrix)
 

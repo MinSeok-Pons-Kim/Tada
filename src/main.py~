@@ -63,9 +63,12 @@ def main():
         pickle.dump(corpus, open(corpus_path, 'wb'))
 
     try: args.keys
-    except NameError: args.keys = corpus.keys
+    except AttributeError: args.keys = corpus.keys
 
     # Define model
+    print("hi")
+    print(corpus.n_relations)
+    print("hi")
     model = model_name(args, corpus)
     logging.info(model)
     model.apply(model.init_weights)

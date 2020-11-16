@@ -32,3 +32,352 @@ INFO:root:
 INFO:root:cuda available: True
 INFO:root:# cuda devices: 1
 INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/tada/KGReader.pkl
+INFO:root:Namespace(model_name='SLRC')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-16 10:25:52 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ category_col    | category            
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0                   
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-05               
+ load            | 0                   
+ lr              | 0.0005              
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ result_file     | ../result/SLRC/SL...
+ suffix          | tada                
+ test_length     | 10                  
+ time_scalar     | 8640000             
+ topk            | [5,10]              
+========================================
+INFO:root:cuda available: True
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/tada/KGReader.pkl
+INFO:root:Namespace(model_name='SLRC')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-16 10:26:44 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ category_col    | category            
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0                   
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-05               
+ load            | 0                   
+ lr              | 0.0005              
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ result_file     | ../result/SLRC/SL...
+ suffix          | tada                
+ test_length     | 10                  
+ time_scalar     | 8640000             
+ topk            | [5,10]              
+========================================
+INFO:root:cuda available: True
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/tada/KGReader.pkl
+INFO:root:Namespace(model_name='SLRC')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-16 10:41:06 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ category_col    | category            
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0                   
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-05               
+ load            | 0                   
+ lr              | 0.0005              
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ result_file     | ../result/SLRC/SL...
+ suffix          | tada                
+ test_length     | 10                  
+ time_scalar     | 8640000             
+ topk            | [5,10]              
+========================================
+INFO:root:cuda available: True
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/tada/KGReader.pkl
+INFO:root:Namespace(model_name='SLRC')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-16 10:41:24 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ category_col    | category            
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0                   
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-05               
+ load            | 0                   
+ lr              | 0.0005              
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ result_file     | ../result/SLRC/SL...
+ suffix          | tada                
+ test_length     | 10                  
+ time_scalar     | 8640000             
+ topk            | [5,10]              
+========================================
+INFO:root:cuda available: True
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/tada/KGReader.pkl
+INFO:root:Namespace(model_name='SLRC')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-16 10:42:03 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ category_col    | category            
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0                   
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-05               
+ load            | 0                   
+ lr              | 0.0005              
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ result_file     | ../result/SLRC/SL...
+ suffix          | tada                
+ test_length     | 10                  
+ time_scalar     | 8640000             
+ topk            | [5,10]              
+========================================
+INFO:root:cuda available: True
+INFO:root:# cuda devices: 1
+INFO:root:Reading data from "../data/", dataset = "Grocery_and_Gourmet_Food", suffix = "tada" 
+INFO:root:Formating data type...
+INFO:root:Constructing relation triplets...
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 14681, "# item": 8457, "# entry": 145832
+INFO:root:"# relation": 3, "# triplet": 372090
+INFO:root:Adding history info...
+INFO:root:Done! [11.05 s]
+
+INFO:root:Constructing relation triplets...
+INFO:root:"# relation": 3, "# triplet": 372090
+INFO:root:Save corpus to ../data/Grocery_and_Gourmet_Food/tada/KGReader.pkl
+INFO:root:#params: 1504795
+INFO:root:SLRC(
+  (u_embeddings): Embedding(14681, 64)
+  (i_embeddings): Embedding(8457, 64)
+  (user_bias): Embedding(14681, 1)
+  (item_bias): Embedding(8457, 1)
+  (alphas): Embedding(55, 3)
+  (pis): Embedding(55, 3)
+  (betas): Embedding(55, 3)
+  (sigmas): Embedding(55, 3)
+  (mus): Embedding(55, 3)
+)
+INFO:root:Test Before Training: (HR@10:0.0877,HR@5:0.0448,NDCG@10:0.0394,NDCG@5:0.0257)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6843 [1.2 s]	 test0=(HR@5:0.4973,NDCG@5:0.3769) test9=(HR@5:0.2958,NDCG@5:0.2224) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 2     loss=0.6477 [1.1 s]	 test0=(HR@5:0.5376,NDCG@5:0.4121) test9=(HR@5:0.3111,NDCG@5:0.2313) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 3     loss=0.5653 [1.2 s]	 test0=(HR@5:0.5493,NDCG@5:0.4181) test9=(HR@5:0.3119,NDCG@5:0.2301) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 4     loss=0.4914 [1.2 s]	 test0=(HR@5:0.5456,NDCG@5:0.4187) test9=(HR@5:0.3100,NDCG@5:0.2290) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 5     loss=0.4468 [1.1 s]	 test0=(HR@5:0.5428,NDCG@5:0.4169) test9=(HR@5:0.3076,NDCG@5:0.2277) [2.0 s] 
+INFO:root:Epoch 6     loss=0.4168 [1.1 s]	 test0=(HR@5:0.5448,NDCG@5:0.4172) test9=(HR@5:0.3040,NDCG@5:0.2260) [2.0 s] 
+INFO:root:Epoch 7     loss=0.3982 [1.2 s]	 test0=(HR@5:0.5428,NDCG@5:0.4167) test9=(HR@5:0.3020,NDCG@5:0.2253) [2.0 s] 
+INFO:root:Epoch 8     loss=0.3819 [1.2 s]	 test0=(HR@5:0.5445,NDCG@5:0.4165) test9=(HR@5:0.3004,NDCG@5:0.2242) [2.0 s] 
+INFO:root:Epoch 9     loss=0.3686 [1.2 s]	 test0=(HR@5:0.5416,NDCG@5:0.4167) test9=(HR@5:0.2989,NDCG@5:0.2238) [2.0 s] 
+INFO:root:Epoch 10    loss=0.3574 [1.2 s]	 test0=(HR@5:0.5393,NDCG@5:0.4126) test9=(HR@5:0.2977,NDCG@5:0.2234) [2.0 s] 
+INFO:root:Epoch 11    loss=0.3457 [1.1 s]	 test0=(HR@5:0.5387,NDCG@5:0.4123) test9=(HR@5:0.2977,NDCG@5:0.2233) [2.0 s] 
+INFO:root:Epoch 12    loss=0.3370 [1.2 s]	 test0=(HR@5:0.5370,NDCG@5:0.4113) test9=(HR@5:0.2961,NDCG@5:0.2225) [2.0 s] 
+INFO:root:Epoch 13    loss=0.3297 [1.2 s]	 test0=(HR@5:0.5382,NDCG@5:0.4106) test9=(HR@5:0.2960,NDCG@5:0.2221) [2.0 s] 
+INFO:root:Epoch 14    loss=0.3214 [1.2 s]	 test0=(HR@5:0.5350,NDCG@5:0.4095) test9=(HR@5:0.2959,NDCG@5:0.2222) [2.0 s] 
+INFO:root:Epoch 15    loss=0.3125 [1.1 s]	 test0=(HR@5:0.5356,NDCG@5:0.4088) test9=(HR@5:0.2952,NDCG@5:0.2217) [2.0 s] 
+INFO:root:Epoch 16    loss=0.3086 [1.1 s]	 test0=(HR@5:0.5356,NDCG@5:0.4091) test9=(HR@5:0.2946,NDCG@5:0.2216) [2.0 s] 
+INFO:root:Epoch 17    loss=0.2985 [1.1 s]	 test0=(HR@5:0.5336,NDCG@5:0.4085) test9=(HR@5:0.2950,NDCG@5:0.2219) [2.0 s] 
+INFO:root:Epoch 18    loss=0.2932 [1.1 s]	 test0=(HR@5:0.5370,NDCG@5:0.4111) test9=(HR@5:0.2968,NDCG@5:0.2228) [2.0 s] 
+INFO:root:Epoch 19    loss=0.2856 [1.2 s]	 test0=(HR@5:0.5367,NDCG@5:0.4112) test9=(HR@5:0.2965,NDCG@5:0.2226) [2.0 s] 
+INFO:root:Epoch 20    loss=0.2802 [1.2 s]	 test0=(HR@5:0.5365,NDCG@5:0.4106) test9=(HR@5:0.2978,NDCG@5:0.2236) [2.0 s] 
+INFO:root:Epoch 21    loss=0.2739 [1.2 s]	 test0=(HR@5:0.5399,NDCG@5:0.4136) test9=(HR@5:0.2974,NDCG@5:0.2238) [2.0 s] 
+INFO:root:Epoch 22    loss=0.2701 [1.2 s]	 test0=(HR@5:0.5410,NDCG@5:0.4142) test9=(HR@5:0.2963,NDCG@5:0.2231) [2.0 s] 
+INFO:root:Epoch 23    loss=0.2626 [1.2 s]	 test0=(HR@5:0.5399,NDCG@5:0.4145) test9=(HR@5:0.2967,NDCG@5:0.2236) [2.0 s] 
+INFO:root:Epoch 24    loss=0.2556 [1.2 s]	 test0=(HR@5:0.5396,NDCG@5:0.4154) test9=(HR@5:0.2978,NDCG@5:0.2239) [2.0 s] 
+INFO:root:Epoch 25    loss=0.2523 [1.2 s]	 test0=(HR@5:0.5407,NDCG@5:0.4154) test9=(HR@5:0.2986,NDCG@5:0.2240) [2.0 s] 
+INFO:root:Epoch 26    loss=0.2450 [1.2 s]	 test0=(HR@5:0.5399,NDCG@5:0.4154) test9=(HR@5:0.2986,NDCG@5:0.2244) [2.0 s] 
+INFO:root:Epoch 27    loss=0.2433 [1.2 s]	 test0=(HR@5:0.5428,NDCG@5:0.4174) test9=(HR@5:0.2987,NDCG@5:0.2248) [2.0 s] 
+INFO:root:Epoch 28    loss=0.2371 [1.1 s]	 test0=(HR@5:0.5419,NDCG@5:0.4173) test9=(HR@5:0.2970,NDCG@5:0.2240) [2.0 s] 
+INFO:root:Epoch 29    loss=0.2316 [1.1 s]	 test0=(HR@5:0.5442,NDCG@5:0.4183) test9=(HR@5:0.2988,NDCG@5:0.2251) [2.0 s] 
+INFO:root:Epoch 30    loss=0.2277 [1.2 s]	 test0=(HR@5:0.5473,NDCG@5:0.4196) test9=(HR@5:0.2990,NDCG@5:0.2253) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 31    loss=0.2221 [1.2 s]	 test0=(HR@5:0.5465,NDCG@5:0.4197) test9=(HR@5:0.2995,NDCG@5:0.2260) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 32    loss=0.2172 [1.2 s]	 test0=(HR@5:0.5496,NDCG@5:0.4219) test9=(HR@5:0.2984,NDCG@5:0.2255) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 33    loss=0.2140 [1.2 s]	 test0=(HR@5:0.5482,NDCG@5:0.4216) test9=(HR@5:0.2993,NDCG@5:0.2263) [2.0 s] 
+INFO:root:Epoch 34    loss=0.2104 [1.1 s]	 test0=(HR@5:0.5488,NDCG@5:0.4215) test9=(HR@5:0.3007,NDCG@5:0.2270) [2.0 s] 
+INFO:root:Epoch 35    loss=0.2075 [1.2 s]	 test0=(HR@5:0.5502,NDCG@5:0.4233) test9=(HR@5:0.3008,NDCG@5:0.2271) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 36    loss=0.2019 [1.2 s]	 test0=(HR@5:0.5490,NDCG@5:0.4226) test9=(HR@5:0.3025,NDCG@5:0.2281) [2.0 s] 
+INFO:root:Epoch 37    loss=0.1989 [1.2 s]	 test0=(HR@5:0.5513,NDCG@5:0.4222) test9=(HR@5:0.3036,NDCG@5:0.2285) [2.0 s] 
+INFO:root:Epoch 38    loss=0.1991 [1.2 s]	 test0=(HR@5:0.5519,NDCG@5:0.4229) test9=(HR@5:0.3019,NDCG@5:0.2279) [2.0 s] 
+INFO:root:Epoch 39    loss=0.1920 [1.2 s]	 test0=(HR@5:0.5510,NDCG@5:0.4219) test9=(HR@5:0.3022,NDCG@5:0.2286) [2.0 s] 
+INFO:root:Epoch 40    loss=0.1890 [1.2 s]	 test0=(HR@5:0.5516,NDCG@5:0.4227) test9=(HR@5:0.3046,NDCG@5:0.2295) [2.0 s] 
+INFO:root:Epoch 41    loss=0.1875 [1.2 s]	 test0=(HR@5:0.5502,NDCG@5:0.4227) test9=(HR@5:0.3046,NDCG@5:0.2297) [2.0 s] 
+INFO:root:Epoch 42    loss=0.1839 [1.2 s]	 test0=(HR@5:0.5499,NDCG@5:0.4221) test9=(HR@5:0.3042,NDCG@5:0.2292) [2.0 s] 
+INFO:root:Epoch 43    loss=0.1815 [1.2 s]	 test0=(HR@5:0.5505,NDCG@5:0.4226) test9=(HR@5:0.3052,NDCG@5:0.2301) [2.0 s] 
+INFO:root:Epoch 44    loss=0.1782 [1.2 s]	 test0=(HR@5:0.5525,NDCG@5:0.4241) test9=(HR@5:0.3049,NDCG@5:0.2301) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 45    loss=0.1754 [1.2 s]	 test0=(HR@5:0.5539,NDCG@5:0.4238) test9=(HR@5:0.3051,NDCG@5:0.2303) [2.0 s] 
+INFO:root:Epoch 46    loss=0.1739 [1.2 s]	 test0=(HR@5:0.5548,NDCG@5:0.4242) test9=(HR@5:0.3049,NDCG@5:0.2300) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 47    loss=0.1717 [1.2 s]	 test0=(HR@5:0.5545,NDCG@5:0.4259) test9=(HR@5:0.3052,NDCG@5:0.2305) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 48    loss=0.1678 [1.2 s]	 test0=(HR@5:0.5545,NDCG@5:0.4260) test9=(HR@5:0.3063,NDCG@5:0.2310) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 49    loss=0.1681 [1.2 s]	 test0=(HR@5:0.5573,NDCG@5:0.4265) test9=(HR@5:0.3073,NDCG@5:0.2318) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 50    loss=0.1652 [1.1 s]	 test0=(HR@5:0.5588,NDCG@5:0.4275) test9=(HR@5:0.3076,NDCG@5:0.2323) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 51    loss=0.1628 [1.2 s]	 test0=(HR@5:0.5570,NDCG@5:0.4278) test9=(HR@5:0.3087,NDCG@5:0.2331) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 52    loss=0.1607 [1.2 s]	 test0=(HR@5:0.5565,NDCG@5:0.4276) test9=(HR@5:0.3087,NDCG@5:0.2332) [2.0 s] 
+INFO:root:Epoch 53    loss=0.1587 [1.1 s]	 test0=(HR@5:0.5585,NDCG@5:0.4285) test9=(HR@5:0.3083,NDCG@5:0.2331) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 54    loss=0.1574 [1.2 s]	 test0=(HR@5:0.5608,NDCG@5:0.4296) test9=(HR@5:0.3088,NDCG@5:0.2337) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 55    loss=0.1557 [1.1 s]	 test0=(HR@5:0.5616,NDCG@5:0.4297) test9=(HR@5:0.3081,NDCG@5:0.2335) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 56    loss=0.1539 [1.2 s]	 test0=(HR@5:0.5636,NDCG@5:0.4318) test9=(HR@5:0.3087,NDCG@5:0.2335) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 57    loss=0.1519 [1.2 s]	 test0=(HR@5:0.5642,NDCG@5:0.4321) test9=(HR@5:0.3101,NDCG@5:0.2343) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 58    loss=0.1496 [1.2 s]	 test0=(HR@5:0.5625,NDCG@5:0.4311) test9=(HR@5:0.3108,NDCG@5:0.2348) [2.0 s] 
+INFO:root:Epoch 59    loss=0.1493 [1.1 s]	 test0=(HR@5:0.5631,NDCG@5:0.4310) test9=(HR@5:0.3114,NDCG@5:0.2354) [2.0 s] 
+INFO:root:Epoch 60    loss=0.1487 [1.2 s]	 test0=(HR@5:0.5656,NDCG@5:0.4330) test9=(HR@5:0.3105,NDCG@5:0.2351) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 61    loss=0.1475 [1.1 s]	 test0=(HR@5:0.5651,NDCG@5:0.4336) test9=(HR@5:0.3099,NDCG@5:0.2346) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 62    loss=0.1438 [1.2 s]	 test0=(HR@5:0.5645,NDCG@5:0.4344) test9=(HR@5:0.3098,NDCG@5:0.2351) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 63    loss=0.1451 [1.1 s]	 test0=(HR@5:0.5653,NDCG@5:0.4353) test9=(HR@5:0.3106,NDCG@5:0.2346) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 64    loss=0.1416 [1.2 s]	 test0=(HR@5:0.5671,NDCG@5:0.4359) test9=(HR@5:0.3110,NDCG@5:0.2352) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 65    loss=0.1423 [1.2 s]	 test0=(HR@5:0.5676,NDCG@5:0.4364) test9=(HR@5:0.3112,NDCG@5:0.2357) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 66    loss=0.1420 [1.2 s]	 test0=(HR@5:0.5688,NDCG@5:0.4372) test9=(HR@5:0.3108,NDCG@5:0.2356) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 67    loss=0.1424 [1.1 s]	 test0=(HR@5:0.5673,NDCG@5:0.4373) test9=(HR@5:0.3108,NDCG@5:0.2352) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 68    loss=0.1392 [1.1 s]	 test0=(HR@5:0.5688,NDCG@5:0.4378) test9=(HR@5:0.3117,NDCG@5:0.2358) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 69    loss=0.1379 [1.2 s]	 test0=(HR@5:0.5708,NDCG@5:0.4392) test9=(HR@5:0.3121,NDCG@5:0.2359) [2.1 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 70    loss=0.1383 [1.2 s]	 test0=(HR@5:0.5705,NDCG@5:0.4394) test9=(HR@5:0.3128,NDCG@5:0.2365) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 71    loss=0.1355 [1.2 s]	 test0=(HR@5:0.5722,NDCG@5:0.4391) test9=(HR@5:0.3128,NDCG@5:0.2365) [2.0 s] 
+INFO:root:Epoch 72    loss=0.1362 [1.2 s]	 test0=(HR@5:0.5725,NDCG@5:0.4400) test9=(HR@5:0.3136,NDCG@5:0.2367) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 73    loss=0.1350 [1.2 s]	 test0=(HR@5:0.5731,NDCG@5:0.4401) test9=(HR@5:0.3129,NDCG@5:0.2366) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 74    loss=0.1342 [1.1 s]	 test0=(HR@5:0.5716,NDCG@5:0.4402) test9=(HR@5:0.3138,NDCG@5:0.2372) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 75    loss=0.1335 [1.2 s]	 test0=(HR@5:0.5722,NDCG@5:0.4405) test9=(HR@5:0.3140,NDCG@5:0.2375) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 76    loss=0.1331 [1.2 s]	 test0=(HR@5:0.5728,NDCG@5:0.4411) test9=(HR@5:0.3134,NDCG@5:0.2375) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 77    loss=0.1321 [1.2 s]	 test0=(HR@5:0.5745,NDCG@5:0.4420) test9=(HR@5:0.3137,NDCG@5:0.2377) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 78    loss=0.1314 [1.1 s]	 test0=(HR@5:0.5774,NDCG@5:0.4430) test9=(HR@5:0.3140,NDCG@5:0.2381) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 79    loss=0.1312 [1.2 s]	 test0=(HR@5:0.5759,NDCG@5:0.4429) test9=(HR@5:0.3147,NDCG@5:0.2382) [2.0 s] 
+INFO:root:Epoch 80    loss=0.1305 [1.1 s]	 test0=(HR@5:0.5759,NDCG@5:0.4432) test9=(HR@5:0.3143,NDCG@5:0.2380) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 81    loss=0.1301 [1.2 s]	 test0=(HR@5:0.5754,NDCG@5:0.4427) test9=(HR@5:0.3152,NDCG@5:0.2385) [2.0 s] 
+INFO:root:Epoch 82    loss=0.1297 [1.2 s]	 test0=(HR@5:0.5768,NDCG@5:0.4439) test9=(HR@5:0.3151,NDCG@5:0.2383) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 83    loss=0.1282 [1.2 s]	 test0=(HR@5:0.5762,NDCG@5:0.4437) test9=(HR@5:0.3146,NDCG@5:0.2384) [2.0 s] 
+INFO:root:Epoch 84    loss=0.1292 [1.2 s]	 test0=(HR@5:0.5776,NDCG@5:0.4438) test9=(HR@5:0.3145,NDCG@5:0.2380) [2.0 s] 
+INFO:root:Epoch 85    loss=0.1278 [1.1 s]	 test0=(HR@5:0.5796,NDCG@5:0.4447) test9=(HR@5:0.3153,NDCG@5:0.2388) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 86    loss=0.1282 [1.2 s]	 test0=(HR@5:0.5788,NDCG@5:0.4450) test9=(HR@5:0.3156,NDCG@5:0.2393) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 87    loss=0.1270 [1.1 s]	 test0=(HR@5:0.5785,NDCG@5:0.4455) test9=(HR@5:0.3161,NDCG@5:0.2391) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 88    loss=0.1264 [1.2 s]	 test0=(HR@5:0.5782,NDCG@5:0.4446) test9=(HR@5:0.3155,NDCG@5:0.2384) [2.0 s] 
+INFO:root:Epoch 89    loss=0.1276 [1.1 s]	 test0=(HR@5:0.5794,NDCG@5:0.4455) test9=(HR@5:0.3159,NDCG@5:0.2391) [2.0 s] 
+INFO:root:Epoch 90    loss=0.1262 [1.2 s]	 test0=(HR@5:0.5782,NDCG@5:0.4446) test9=(HR@5:0.3155,NDCG@5:0.2389) [2.0 s] 
+INFO:root:Epoch 91    loss=0.1264 [1.2 s]	 test0=(HR@5:0.5794,NDCG@5:0.4463) test9=(HR@5:0.3154,NDCG@5:0.2389) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 92    loss=0.1248 [1.2 s]	 test0=(HR@5:0.5799,NDCG@5:0.4467) test9=(HR@5:0.3154,NDCG@5:0.2389) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 93    loss=0.1243 [1.2 s]	 test0=(HR@5:0.5791,NDCG@5:0.4455) test9=(HR@5:0.3145,NDCG@5:0.2386) [2.0 s] 
+INFO:root:Epoch 94    loss=0.1243 [1.1 s]	 test0=(HR@5:0.5802,NDCG@5:0.4457) test9=(HR@5:0.3142,NDCG@5:0.2380) [2.0 s] 
+INFO:root:Epoch 95    loss=0.1237 [1.2 s]	 test0=(HR@5:0.5805,NDCG@5:0.4467) test9=(HR@5:0.3158,NDCG@5:0.2388) [2.0 s] 
+INFO:root:Epoch 96    loss=0.1237 [1.2 s]	 test0=(HR@5:0.5825,NDCG@5:0.4467) test9=(HR@5:0.3155,NDCG@5:0.2389) [2.0 s] 
+INFO:root:Epoch 97    loss=0.1233 [1.2 s]	 test0=(HR@5:0.5836,NDCG@5:0.4473) test9=(HR@5:0.3156,NDCG@5:0.2386) [2.0 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 98    loss=0.1237 [1.2 s]	 test0=(HR@5:0.5831,NDCG@5:0.4479) test9=(HR@5:0.3149,NDCG@5:0.2382) [2.1 s] 
+INFO:root:Save model to ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 99    loss=0.1253 [1.1 s]	 test0=(HR@5:0.5816,NDCG@5:0.4474) test9=(HR@5:0.3153,NDCG@5:0.2387) [2.0 s] 
+INFO:root:Epoch 100   loss=0.1233 [1.2 s]	 test0=(HR@5:0.5811,NDCG@5:0.4475) test9=(HR@5:0.3146,NDCG@5:0.2388) [2.0 s] 
+INFO:root:
+Best Iter(98)=test0	 test0=(HR@5:0.5831,NDCG@5:0.4479) test9=(HR@5:0.3149,NDCG@5:0.2382) [319.5 s] 
+INFO:root:Load model from ../model/SLRC/SLRC__Grocery_and_Gourmet_Food__2019__lr=0.0005__l2=1e-05.pt
+INFO:root:
+Test After Training: (HR@10:0.3966,HR@5:0.3149,NDCG@10:0.2645,NDCG@5:0.2382)
+INFO:root:
+--------------------------------------------- END: 2020-11-16 10:48:49 ---------------------------------------------
