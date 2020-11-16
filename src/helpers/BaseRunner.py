@@ -75,12 +75,14 @@ class BaseRunner(object):
         self.learning_rate = args.lr
         self.batch_size = args.batch_size
         self.eval_batch_size = args.eval_batch_size
+        self.keys = args.keys
         self.l2 = args.l2
         self.optimizer_name = args.optimizer
         self.num_workers = args.num_workers
         self.pin_memory = args.pin_memory
         self.topk = eval(args.topk)
         self.metrics = [m.strip().upper() for m in eval(args.metric)]
+        self.result_file = args.result_file
         self.main_metric = '{}@{}'.format(self.metrics[0], self.topk[0])  # early stop based on main_metric
 
         self.time = None  # will store [start_time, last_step_time]
@@ -133,7 +135,7 @@ class BaseRunner(object):
                 # Record dev and test results
                 #dev_result = self.evaluate(model, data_dict['dev'], self.topk[:1], self.metrics)
                 #test_result = self.evaluate(model, data_dict['test'], self.topk[:1], self.metrics)
-                for key in args.keys[1:]:
+                for key in self.keys[1:]:
                     tmp_result = self.evaluate(model, data_dict[key], self.topk[:1], self.metrics)
                     test_results[key].append(tmp_result)
 
@@ -142,7 +144,8 @@ class BaseRunner(object):
                 #dev_results.append(dev_result)
                 #test_results.append(test_result)
 
-                main_metric_results.append(test_results[args.keys[1]][self.main_metric]) # keys: ['train', 'test0', ... , 'testk']
+                # main_metric_results.append(dev_result[self.main_metric])
+                main_metric_results.append(test_results[self.keys[1]][-1][self.main_metric]) # keys: ['train', 'test0', ... , 'testk']
 
                 '''
                 logging.info("Epoch {:<5} loss={:<.4f} [{:<.1f} s]\t dev=({}) test=({}) [{:<.1f} s] ".format(
@@ -151,9 +154,9 @@ class BaseRunner(object):
                 '''
 
                 logging.info("Epoch {:<5} loss={:<.4f} [{:<.1f} s]\t {}=({}) {}=({}) [{:<.1f} s] ".format(
-                             epoch + 1, loss, training_time, args.keys[1],
-                             utils.format_metric(test_results[args.keys[1]]),
-                             args.keys[-1], utils.format_metric(test_results[args.keys[-1]),
+                             epoch + 1, loss, training_time, self.keys[1],
+                             utils.format_metric(test_results[self.keys[1]][-1]),
+                             self.keys[-1], utils.format_metric(test_results[self.keys[-1]][-1]),
                              testing_time))
 
                 # Save model and early stop
@@ -179,12 +182,12 @@ class BaseRunner(object):
         #             best_epoch + 1, utils.format_metric(dev_results[best_epoch]),
         #             utils.format_metric(test_results[best_epoch]), self.time[1] - self.time[0]))
         logging.info(os.linesep + "Best Iter({})={:>5}\t {}=({}) {}=({}) [{:<.1f} s] ".format(
-                     best_epoch + 1, args.keys[1], args.keys[1],
-                     utils.format_metric(test_results[args.keys[1]][best_epoch]),
-                     args.keys[-1], utils.format_metric(test_results[args.keys[-1][best_epoch]),
+                     best_epoch + 1, self.keys[1], self.keys[1],
+                     utils.format_metric(test_results[self.keys[1]][best_epoch]),
+                     self.keys[-1], utils.format_metric(test_results[self.keys[-1]][best_epoch]),
                      self.time[1] - self.time[0]))
 
-        pd.DataFrame(test_results).to_csv(args.result_file, index=False)
+        pd.DataFrame(test_results).to_csv(self.result_file, index=False)
 
         model.load_model()
 

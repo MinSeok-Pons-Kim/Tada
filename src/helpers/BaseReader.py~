@@ -14,7 +14,7 @@ class BaseReader(object):
     def parse_data_args(parser):
         parser.add_argument('--path', type=str, default='../data/',
                             help='Input data dir.')
-        parser.add_argument('--suffix', type=str, default='/tada/',
+        parser.add_argument('--suffix', type=str, default='tada',
                             help='Input data dir of tada.')
         parser.add_argument('--dataset', type=str, default='Grocery_and_Gourmet_Food',
                             help='Choose a dataset.')
@@ -29,6 +29,7 @@ class BaseReader(object):
     def __init__(self, args):
         self.sep = args.sep
         self.prefix = args.path
+        self.suffix = args.suffix
         self.dataset = args.dataset
         self.history_max = args.history_max
         self.keys = ['train'] + ['test' + str(i) for i in range(args.test_length)]
@@ -106,7 +107,17 @@ class BaseReader(object):
     def _read_preprocessed_df(self):
         #for key in ['train', 'dev', 'test']:
         for key in self.keys:
+            print("bye")
+            print(self.prefix)
+            print(self.dataset)
+            print(self.suffix)
+            ang = os.path.join(self.prefix, self.dataset, self.suffix, key + '.csv')
+            print(ang)
+
+            print(os.path.join(self.prefix, self.dataset, self.suffix, key + '.csv'))
+            print("haaa")
             self.data_df[key] = pd.read_csv(os.path.join(self.prefix, self.dataset, self.suffix, key + '.csv'), sep=self.sep)
+            print("hi")
             #self.data_df[key] = pd.read_csv(os.path.join(self.prefix, self.dataset, '.csv'), sep=self.sep)
 
         item_meta_path = os.path.join(self.prefix, self.dataset, self.suffix, 'item_meta.csv')

@@ -14,7 +14,7 @@ class BaseReader(object):
     def parse_data_args(parser):
         parser.add_argument('--path', type=str, default='../data/',
                             help='Input data dir.')
-        parser.add_argument('--suffix', type=str, default='/tada/',
+        parser.add_argument('--suffix', type=str, default='tada',
                             help='Input data dir of tada.')
         parser.add_argument('--dataset', type=str, default='Grocery_and_Gourmet_Food',
                             help='Choose a dataset.')
@@ -29,6 +29,7 @@ class BaseReader(object):
     def __init__(self, args):
         self.sep = args.sep
         self.prefix = args.path
+        self.suffix = args.suffix
         self.dataset = args.dataset
         self.history_max = args.history_max
         self.keys = ['train'] + ['test' + str(i) for i in range(args.test_length)]

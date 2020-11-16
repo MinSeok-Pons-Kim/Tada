@@ -62,6 +62,9 @@ def main():
         logging.info('Save corpus to {}'.format(corpus_path))
         pickle.dump(corpus, open(corpus_path, 'wb'))
 
+    try: args.keys
+    except AttributeError: args.keys = corpus.keys
+
     # Define model
     model = model_name(args, corpus)
     logging.info(model)
