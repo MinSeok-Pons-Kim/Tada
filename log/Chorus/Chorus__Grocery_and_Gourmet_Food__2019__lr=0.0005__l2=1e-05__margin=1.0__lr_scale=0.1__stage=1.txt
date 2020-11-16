@@ -1,0 +1,38 @@
+INFO:root:Namespace(model_name='Chorus')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-16 00:05:19 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ base_method     | BPR                 
+ batch_size      | 512                 
+ buffer          | 1                   
+ category_col    | category            
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0                   
+ early_stop      | 0                   
+ emb_size        | 64                  
+ epoch           | 50                  
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-05               
+ load            | 0                   
+ lr              | 0.0005              
+ lr_scale        | 0.1                 
+ margin          | 1.0                 
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ result_file     | ../result/Chorus/...
+ stage           | 1                   
+ suffix          | tada                
+ test_length     | 10                  
+ time_scalar     | 8640000             
+ topk            | [5,10]              
+========================================
+INFO:root:cuda available: True
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/tada/KGReader.pkl

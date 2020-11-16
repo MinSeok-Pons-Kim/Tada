@@ -1,0 +1,44 @@
+INFO:root:Namespace(model_name='CFKG')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-16 00:05:06 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0                   
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-08               
+ load            | 0                   
+ lr              | 0.0001              
+ margin          | 1.0                 
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ result_file     | ../result/CFKG/CF...
+ suffix          | tada                
+ test_length     | 10                  
+ topk            | [5,10]              
+========================================
+INFO:root:cuda available: True
+INFO:root:# cuda devices: 1
+INFO:root:Reading data from "../data/", dataset = "Grocery_and_Gourmet_Food", suffix = "tada" 
+INFO:root:Formating data type...
+INFO:root:Constructing relation triplets...
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 14681, "# item": 8457, "# entry": 145832
+INFO:root:"# relation": nan, "# triplet": 0
+INFO:root:Adding history info...
+INFO:root:Done! [9.86 s]
+
+INFO:root:Constructing relation triplets...
+INFO:root:"# relation": nan, "# triplet": 0
+INFO:root:Save corpus to ../data/Grocery_and_Gourmet_Food/tada/KGReader.pkl
