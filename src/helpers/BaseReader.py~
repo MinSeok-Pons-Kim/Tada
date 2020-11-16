@@ -107,20 +107,10 @@ class BaseReader(object):
     def _read_preprocessed_df(self):
         #for key in ['train', 'dev', 'test']:
         for key in self.keys:
-            print("bye")
-            print(self.prefix)
-            print(self.dataset)
-            print(self.suffix)
-            ang = os.path.join(self.prefix, self.dataset, self.suffix, key + '.csv')
-            print(ang)
-
-            print(os.path.join(self.prefix, self.dataset, self.suffix, key + '.csv'))
-            print("haaa")
-            self.data_df[key] = pd.read_csv(os.path.join(self.prefix, self.dataset, self.suffix, key + '.csv'), sep=self.sep)
-            print("hi")
+            self.data_df[key] = pd.read_csv(os.path.join(self.prefix, self.dataset, self.suffix, str(self.test_length), key + '.csv'), sep=self.sep)
             #self.data_df[key] = pd.read_csv(os.path.join(self.prefix, self.dataset, '.csv'), sep=self.sep)
 
-        item_meta_path = os.path.join(self.prefix, self.dataset, self.suffix, 'item_meta.csv')
+        item_meta_path = os.path.join(self.prefix, self.dataset, self.suffix, str(self.test_length),'item_meta.csv')
         #item_meta_path = os.path.join(self.prefix, self.dataset, 'item_meta.csv')
         if os.path.exists(item_meta_path):
             self.item_meta_df = pd.read_csv(item_meta_path, sep=self.sep)

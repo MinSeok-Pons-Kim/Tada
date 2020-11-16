@@ -1,0 +1,66 @@
+INFO:root:Namespace(model_name='CFKG')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-16 17:05:51 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0                   
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ finetune        | 0                   
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 1e-08               
+ load            | 0                   
+ lr              | 0.0001              
+ margin          | 1.0                 
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ result_file     | ../result/CFKG/CF...
+ suffix          | tada                
+ test_length     | 5                   
+ topk            | [5,10]              
+========================================
+INFO:root:cuda available: True
+INFO:root:# cuda devices: 1
+INFO:root:Reading data from "../data/", dataset = "Grocery_and_Gourmet_Food", suffix = "tada" 
+INFO:root:Formating data type...
+INFO:root:Constructing relation triplets...
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 14681, "# item": 8457, "# entry": 145832
+INFO:root:"# relation": 3, "# triplet": 372090
+INFO:root:Adding history info...
+INFO:root:Done! [16.48 s]
+
+INFO:root:Constructing relation triplets...
+INFO:root:"# relation": 3, "# triplet": 372090
+INFO:root:Save corpus to ../data/Grocery_and_Gourmet_Food/tada/5/KGReader.pkl
+INFO:root:#params: 1481024
+INFO:root:CFKG(
+  (e_embeddings): Embedding(23138, 64)
+  (r_embeddings): Embedding(3, 64)
+  (loss_function): MarginRankingLoss()
+)
+INFO:root:Test Before Training: (HR@10:0.1004,HR@5:0.0476,NDCG@10:0.0446,NDCG@5:0.0278)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.9368 [26.9 s]	 test0=(HR@5:0.2918,NDCG@5:0.1984) test4=(HR@5:0.1623,NDCG@5:0.0998) [2.0 s] 
+INFO:root:Save model to ../model/CFKG/CFKG__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 2     loss=0.7622 [26.1 s]	 test0=(HR@5:0.2991,NDCG@5:0.2011) test4=(HR@5:0.1726,NDCG@5:0.1039) [1.9 s] 
+INFO:root:Save model to ../model/CFKG/CFKG__Grocery_and_Gourmet_Food__2019...
+INFO:root:Epoch 3     loss=0.7312 [28.0 s]	 test0=(HR@5:0.3018,NDCG@5:0.2008) test4=(HR@5:0.1760,NDCG@5:0.1051) [2.0 s] 
+INFO:root:Epoch 4     loss=0.7216 [32.0 s]	 test0=(HR@5:0.3014,NDCG@5:0.1996) test4=(HR@5:0.1782,NDCG@5:0.1054) [2.4 s] 
+INFO:root:Epoch 5     loss=0.7137 [37.0 s]	 test0=(HR@5:0.3018,NDCG@5:0.1994) test4=(HR@5:0.1764,NDCG@5:0.1048) [3.2 s] 
+INFO:root:Epoch 6     loss=0.7036 [35.4 s]	 test0=(HR@5:0.3022,NDCG@5:0.1995) test4=(HR@5:0.1775,NDCG@5:0.1057) [2.1 s] 
+INFO:root:Epoch 7     loss=0.6943 [38.0 s]	 test0=(HR@5:0.3013,NDCG@5:0.1994) test4=(HR@5:0.1755,NDCG@5:0.1040) [2.2 s] 
+INFO:root:Epoch 8     loss=0.6821 [38.6 s]	 test0=(HR@5:0.3015,NDCG@5:0.1997) test4=(HR@5:0.1755,NDCG@5:0.1043) [2.1 s] 
+INFO:root:Epoch 9     loss=0.6678 [38.6 s]	 test0=(HR@5:0.3000,NDCG@5:0.1985) test4=(HR@5:0.1752,NDCG@5:0.1037) [2.5 s] 
+INFO:root:Epoch 10    loss=0.6497 [38.3 s]	 test0=(HR@5:0.3029,NDCG@5:0.2002) test4=(HR@5:0.1771,NDCG@5:0.1051) [3.0 s] 
+INFO:root:Epoch 11    loss=0.6280 [39.1 s]	 test0=(HR@5:0.3040,NDCG@5:0.2004) test4=(HR@5:0.1764,NDCG@5:0.1048) [2.1 s] 

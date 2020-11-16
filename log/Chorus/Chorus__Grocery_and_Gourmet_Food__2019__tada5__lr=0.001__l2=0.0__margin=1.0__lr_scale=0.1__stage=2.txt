@@ -1,0 +1,127 @@
+INFO:root:Namespace(model_name='Chorus')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-16 17:05:51 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ base_method     | BPR                 
+ batch_size      | 256                 
+ buffer          | 1                   
+ category_col    | category            
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0                   
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ finetune        | 0                   
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 0.0                 
+ load            | 0                   
+ lr              | 0.001               
+ lr_scale        | 0.1                 
+ margin          | 1.0                 
+ metric          | ["NDCG","HR"]       
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ result_file     | ../result/Chorus/...
+ stage           | 2                   
+ suffix          | tada                
+ test_length     | 5                   
+ time_scalar     | 8640000             
+ topk            | [5,10]              
+========================================
+INFO:root:cuda available: True
+INFO:root:# cuda devices: 1
+INFO:root:Reading data from "../data/", dataset = "Grocery_and_Gourmet_Food", suffix = "tada" 
+INFO:root:Formating data type...
+INFO:root:Constructing relation triplets...
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 14681, "# item": 8457, "# entry": 145832
+INFO:root:"# relation": 3, "# triplet": 372090
+INFO:root:Adding history info...
+INFO:root:Done! [16.46 s]
+
+INFO:root:Constructing relation triplets...
+INFO:root:"# relation": 3, "# triplet": 372090
+INFO:root:Save corpus to ../data/Grocery_and_Gourmet_Food/tada/5/KGReader.pkl
+INFO:root:#params: 1504721
+INFO:root:Chorus(
+  (u_embeddings): Embedding(14681, 64)
+  (i_embeddings): Embedding(8457, 64)
+  (r_embeddings): Embedding(3, 64)
+  (betas): Embedding(55, 3)
+  (mus): Embedding(55, 3)
+  (sigmas): Embedding(55, 3)
+  (prediction): Linear(in_features=64, out_features=1, bias=False)
+  (user_bias): Embedding(14681, 1)
+  (item_bias): Embedding(8457, 1)
+  (kg_loss): MarginRankingLoss()
+)
+INFO:root:Load model from ../model/Chorus/KG__Grocery_and_Gourmet_Food__emb_size=64__margin=1.0.pt
+INFO:root:Test Before Training: (HR@10:0.1085,HR@5:0.0567,NDCG@10:0.0500,NDCG@5:0.0334)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6665 [6.5 s]	 test0=(HR@5:0.4075,NDCG@5:0.2841) test4=(HR@5:0.2411,NDCG@5:0.1555) [3.4 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 2     loss=0.5906 [6.0 s]	 test0=(HR@5:0.4415,NDCG@5:0.3161) test4=(HR@5:0.2683,NDCG@5:0.1786) [4.3 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 3     loss=0.5215 [5.8 s]	 test0=(HR@5:0.4512,NDCG@5:0.3253) test4=(HR@5:0.2791,NDCG@5:0.1862) [3.4 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 4     loss=0.4652 [6.8 s]	 test0=(HR@5:0.4588,NDCG@5:0.3325) test4=(HR@5:0.2842,NDCG@5:0.1911) [4.2 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 5     loss=0.4191 [6.0 s]	 test0=(HR@5:0.4637,NDCG@5:0.3376) test4=(HR@5:0.2918,NDCG@5:0.1977) [3.3 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 6     loss=0.3793 [6.9 s]	 test0=(HR@5:0.4692,NDCG@5:0.3428) test4=(HR@5:0.2981,NDCG@5:0.2032) [3.3 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 7     loss=0.3464 [6.3 s]	 test0=(HR@5:0.4737,NDCG@5:0.3469) test4=(HR@5:0.3019,NDCG@5:0.2065) [4.4 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 8     loss=0.3173 [6.8 s]	 test0=(HR@5:0.4789,NDCG@5:0.3518) test4=(HR@5:0.3060,NDCG@5:0.2099) [3.6 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 9     loss=0.2932 [7.1 s]	 test0=(HR@5:0.4835,NDCG@5:0.3560) test4=(HR@5:0.3081,NDCG@5:0.2127) [3.6 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 10    loss=0.2711 [6.9 s]	 test0=(HR@5:0.4891,NDCG@5:0.3598) test4=(HR@5:0.3121,NDCG@5:0.2158) [3.5 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 11    loss=0.2532 [6.7 s]	 test0=(HR@5:0.4919,NDCG@5:0.3639) test4=(HR@5:0.3150,NDCG@5:0.2181) [4.0 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 12    loss=0.2367 [5.9 s]	 test0=(HR@5:0.4961,NDCG@5:0.3678) test4=(HR@5:0.3173,NDCG@5:0.2198) [3.4 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 13    loss=0.2209 [7.0 s]	 test0=(HR@5:0.5007,NDCG@5:0.3720) test4=(HR@5:0.3208,NDCG@5:0.2226) [3.7 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 14    loss=0.2072 [6.4 s]	 test0=(HR@5:0.5030,NDCG@5:0.3748) test4=(HR@5:0.3248,NDCG@5:0.2255) [3.4 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 15    loss=0.1971 [6.6 s]	 test0=(HR@5:0.5075,NDCG@5:0.3785) test4=(HR@5:0.3266,NDCG@5:0.2270) [3.5 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 16    loss=0.1854 [6.4 s]	 test0=(HR@5:0.5103,NDCG@5:0.3815) test4=(HR@5:0.3265,NDCG@5:0.2282) [4.2 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 17    loss=0.1755 [6.8 s]	 test0=(HR@5:0.5145,NDCG@5:0.3849) test4=(HR@5:0.3294,NDCG@5:0.2311) [3.4 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 18    loss=0.1657 [6.7 s]	 test0=(HR@5:0.5150,NDCG@5:0.3865) test4=(HR@5:0.3323,NDCG@5:0.2328) [4.1 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 19    loss=0.1587 [6.9 s]	 test0=(HR@5:0.5173,NDCG@5:0.3884) test4=(HR@5:0.3348,NDCG@5:0.2349) [3.5 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 20    loss=0.1498 [6.8 s]	 test0=(HR@5:0.5182,NDCG@5:0.3902) test4=(HR@5:0.3357,NDCG@5:0.2362) [4.3 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 21    loss=0.1420 [6.9 s]	 test0=(HR@5:0.5196,NDCG@5:0.3921) test4=(HR@5:0.3371,NDCG@5:0.2373) [3.6 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 22    loss=0.1357 [6.8 s]	 test0=(HR@5:0.5220,NDCG@5:0.3941) test4=(HR@5:0.3391,NDCG@5:0.2393) [3.4 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 23    loss=0.1302 [7.0 s]	 test0=(HR@5:0.5233,NDCG@5:0.3955) test4=(HR@5:0.3410,NDCG@5:0.2408) [4.2 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 24    loss=0.1229 [5.9 s]	 test0=(HR@5:0.5257,NDCG@5:0.3973) test4=(HR@5:0.3421,NDCG@5:0.2415) [4.3 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 25    loss=0.1176 [7.9 s]	 test0=(HR@5:0.5273,NDCG@5:0.3985) test4=(HR@5:0.3431,NDCG@5:0.2425) [3.5 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 26    loss=0.1118 [6.6 s]	 test0=(HR@5:0.5297,NDCG@5:0.4000) test4=(HR@5:0.3444,NDCG@5:0.2438) [4.0 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 27    loss=0.1075 [6.9 s]	 test0=(HR@5:0.5294,NDCG@5:0.4004) test4=(HR@5:0.3449,NDCG@5:0.2447) [4.4 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 28    loss=0.1033 [6.7 s]	 test0=(HR@5:0.5310,NDCG@5:0.4017) test4=(HR@5:0.3458,NDCG@5:0.2452) [4.2 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 29    loss=0.0982 [6.9 s]	 test0=(HR@5:0.5335,NDCG@5:0.4029) test4=(HR@5:0.3463,NDCG@5:0.2458) [4.1 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...
+INFO:root:Epoch 30    loss=0.0942 [7.6 s]	 test0=(HR@5:0.5331,NDCG@5:0.4027) test4=(HR@5:0.3459,NDCG@5:0.2458) [3.3 s] 
+INFO:root:Epoch 31    loss=0.0912 [6.9 s]	 test0=(HR@5:0.5340,NDCG@5:0.4034) test4=(HR@5:0.3455,NDCG@5:0.2460) [3.6 s] 
+INFO:root:Save model to ../model/Chorus/Chorus__Grocery_and_Gourmet_Food__...

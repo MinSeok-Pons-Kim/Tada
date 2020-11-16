@@ -251,3 +251,58 @@ class BaseRunner(object):
         result_dict = self.evaluate(model, data, self.topk, self.metrics)
         res_str = '(' + utils.format_metric(result_dict) + ')'
         return res_str
+
+
+    ########################## methods for Ta-da ###########################
+
+    def finetune(self, model: torch.nn.Module, data_dict: Dict[str, BaseModel.Dataset], stop_point: int) -> NoReturn:
+        main_metric_results, test_results = list(), defaultdict(list)
+        self._check_time(start=True)
+        try:
+            for epoch in range(self.epoch):
+                # Fit
+                self._check_time()
+                loss = self.fit(model, data_dict[self.keys[stop_point]], epoch=epoch + 1)
+                training_time = self._check_time()
+
+                # Observe selected tensors
+                if len(model.check_list) > 0 and self.check_epoch > 0 and epoch % self.check_epoch == 0:
+                    utils.check(model.check_list)
+
+                # Record dev and test results
+                for key in self.keys[stop_point+1:]:
+                    tmp_result = self.evaluate(model, data_dict[key], self.topk[:1], self.metrics)
+                    test_results[key].append(tmp_result)
+
+                testing_time = self._check_time()
+                # main_metric_results.append(dev_result[self.main_metric])
+                main_metric_results.append(test_results[self.keys[stop_point]][-1][self.main_metric]) # keys: ['train', 'test0', ... , 'testk']
+                logging.info("Epoch {:<5} loss={:<.4f} [{:<.1f} s]\t {}=({}) {}=({}) [{:<.1f} s] ".format(
+                             epoch + 1, loss, training_time, self.keys[stop_point],
+                             utils.format_metric(test_results[self.keys[stop_point]][-1]),
+                             self.keys[-1], utils.format_metric(test_results[self.keys[-1]][-1]),
+                             testing_time))
+
+                # Save model and early stop
+                if max(main_metric_results) == main_metric_results[-1] or \
+                        (hasattr(model, 'stage') and model.stage == 1):
+                    model.save_model()
+        except KeyboardInterrupt:
+            logging.info("Early stop manually")
+            exit_here = input("Exit completely without evaluation? (y/n) (default n):")
+            if exit_here.lower().startswith('y'):
+                logging.info(os.linesep + '-' * 45 + ' END: ' + utils.get_time() + ' ' + '-' * 45)
+                exit(1)
+
+        # Find the best dev result across iterations
+        best_epoch = main_metric_results.index(max(main_metric_results))
+        logging.info(os.linesep + "Best Iter({})={:>5}\t {}=({}) {}=({}) [{:<.1f} s] ".format(
+                     best_epoch + 1, self.keys[stop_point], self.keys[stop_point],
+                     utils.format_metric(test_results[self.keys[stop_point]][best_epoch]),
+                     self.keys[-1], utils.format_metric(test_results[self.keys[-1]][best_epoch]),
+                     self.time[1] - self.time[0]))
+
+        pd.DataFrame(test_results).to_csv(self.result_file, index=False)
+
+        model.load_model()
+

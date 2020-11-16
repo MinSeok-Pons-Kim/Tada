@@ -1,0 +1,127 @@
+INFO:root:Namespace(model_name='TiSASRec')
+INFO:root:--------------------------------------------- BEGIN: 2020-11-16 17:05:51 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ buffer          | 1                   
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0                   
+ early_stop      | 5                   
+ emb_size        | 64                  
+ epoch           | 100                 
+ eval_batch_size | 256                 
+ finetune        | 0                   
+ gpu             | 0                   
+ hidden_size     | 100                 
+ history_max     | 20                  
+ l2              | 1e-06               
+ load            | 0                   
+ lr              | 0.0001              
+ metric          | ["NDCG","HR"]       
+ num_heads       | 1                   
+ num_layers      | 1                   
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 2019                
+ result_file     | ../result/TiSASRe...
+ suffix          | tada                
+ test_length     | 5                   
+ time_max        | 512                 
+ topk            | [5,10]              
+========================================
+INFO:root:cuda available: True
+INFO:root:# cuda devices: 1
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food/tada/5/BaseReader.pkl
+INFO:root:#params: 630656
+INFO:root:TiSASRec(
+  (i_embeddings): Embedding(8457, 64)
+  (p_k_embeddings): Embedding(21, 64)
+  (p_v_embeddings): Embedding(21, 64)
+  (t_k_embeddings): Embedding(513, 64)
+  (t_v_embeddings): Embedding(513, 64)
+  (transformer_block): ModuleList(
+    (0): TimeIntervalTransformerLayer(
+      (masked_attn_head): TimeIntervalMultiHeadAttention(
+        (v_linear): Linear(in_features=64, out_features=64, bias=True)
+        (k_linear): Linear(in_features=64, out_features=64, bias=True)
+        (q_linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (layer_norm1): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+      (dropout1): Dropout(p=0, inplace=False)
+      (linear1): Linear(in_features=64, out_features=64, bias=True)
+      (linear2): Linear(in_features=64, out_features=64, bias=True)
+      (layer_norm2): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+      (dropout2): Dropout(p=0, inplace=False)
+    )
+  )
+)
+INFO:root:Test Before Training: (HR@10:0.1004,HR@5:0.0480,NDCG@10:0.0451,NDCG@5:0.0284)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6393 [6.3 s]	 test0=(HR@5:0.2889,NDCG@5:0.1964) test4=(HR@5:0.1680,NDCG@5:0.1028) [3.0 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 2     loss=0.5277 [7.1 s]	 test0=(HR@5:0.3032,NDCG@5:0.2044) test4=(HR@5:0.1806,NDCG@5:0.1091) [2.9 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 3     loss=0.4599 [7.6 s]	 test0=(HR@5:0.3056,NDCG@5:0.2065) test4=(HR@5:0.1806,NDCG@5:0.1097) [2.9 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 4     loss=0.4215 [7.9 s]	 test0=(HR@5:0.3104,NDCG@5:0.2111) test4=(HR@5:0.1822,NDCG@5:0.1121) [2.9 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 5     loss=0.3936 [6.7 s]	 test0=(HR@5:0.3128,NDCG@5:0.2130) test4=(HR@5:0.1856,NDCG@5:0.1137) [2.7 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 6     loss=0.3772 [7.4 s]	 test0=(HR@5:0.3203,NDCG@5:0.2187) test4=(HR@5:0.1861,NDCG@5:0.1152) [2.9 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 7     loss=0.3587 [8.2 s]	 test0=(HR@5:0.3245,NDCG@5:0.2234) test4=(HR@5:0.1913,NDCG@5:0.1189) [3.2 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 8     loss=0.3445 [6.9 s]	 test0=(HR@5:0.3299,NDCG@5:0.2294) test4=(HR@5:0.1941,NDCG@5:0.1221) [2.9 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 9     loss=0.3297 [7.7 s]	 test0=(HR@5:0.3385,NDCG@5:0.2363) test4=(HR@5:0.2013,NDCG@5:0.1269) [2.9 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 10    loss=0.3152 [8.3 s]	 test0=(HR@5:0.3459,NDCG@5:0.2442) test4=(HR@5:0.2067,NDCG@5:0.1312) [3.0 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 11    loss=0.3029 [6.9 s]	 test0=(HR@5:0.3535,NDCG@5:0.2520) test4=(HR@5:0.2113,NDCG@5:0.1357) [2.9 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 12    loss=0.2915 [8.9 s]	 test0=(HR@5:0.3577,NDCG@5:0.2560) test4=(HR@5:0.2146,NDCG@5:0.1379) [4.2 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 13    loss=0.2813 [10.2 s]	 test0=(HR@5:0.3653,NDCG@5:0.2625) test4=(HR@5:0.2195,NDCG@5:0.1424) [4.2 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 14    loss=0.2690 [9.6 s]	 test0=(HR@5:0.3701,NDCG@5:0.2678) test4=(HR@5:0.2268,NDCG@5:0.1469) [4.1 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 15    loss=0.2607 [10.9 s]	 test0=(HR@5:0.3750,NDCG@5:0.2720) test4=(HR@5:0.2297,NDCG@5:0.1503) [3.5 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 16    loss=0.2480 [10.3 s]	 test0=(HR@5:0.3770,NDCG@5:0.2752) test4=(HR@5:0.2336,NDCG@5:0.1529) [3.3 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 17    loss=0.2400 [10.1 s]	 test0=(HR@5:0.3769,NDCG@5:0.2761) test4=(HR@5:0.2349,NDCG@5:0.1538) [3.3 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 18    loss=0.2307 [11.7 s]	 test0=(HR@5:0.3821,NDCG@5:0.2811) test4=(HR@5:0.2417,NDCG@5:0.1583) [3.7 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 19    loss=0.2216 [9.8 s]	 test0=(HR@5:0.3850,NDCG@5:0.2829) test4=(HR@5:0.2422,NDCG@5:0.1589) [3.3 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 20    loss=0.2125 [11.2 s]	 test0=(HR@5:0.3895,NDCG@5:0.2877) test4=(HR@5:0.2455,NDCG@5:0.1623) [3.4 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 21    loss=0.2042 [11.0 s]	 test0=(HR@5:0.3917,NDCG@5:0.2900) test4=(HR@5:0.2486,NDCG@5:0.1659) [3.4 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 22    loss=0.1972 [9.6 s]	 test0=(HR@5:0.3951,NDCG@5:0.2939) test4=(HR@5:0.2540,NDCG@5:0.1696) [3.7 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 23    loss=0.1893 [11.3 s]	 test0=(HR@5:0.3986,NDCG@5:0.2950) test4=(HR@5:0.2552,NDCG@5:0.1693) [3.5 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 24    loss=0.1803 [11.5 s]	 test0=(HR@5:0.4020,NDCG@5:0.2997) test4=(HR@5:0.2576,NDCG@5:0.1726) [3.4 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 25    loss=0.1730 [10.2 s]	 test0=(HR@5:0.4033,NDCG@5:0.3008) test4=(HR@5:0.2595,NDCG@5:0.1738) [3.5 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 26    loss=0.1675 [11.4 s]	 test0=(HR@5:0.4050,NDCG@5:0.3035) test4=(HR@5:0.2636,NDCG@5:0.1775) [4.1 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 27    loss=0.1593 [11.0 s]	 test0=(HR@5:0.4076,NDCG@5:0.3065) test4=(HR@5:0.2688,NDCG@5:0.1811) [3.5 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 28    loss=0.1535 [10.9 s]	 test0=(HR@5:0.4056,NDCG@5:0.3063) test4=(HR@5:0.2667,NDCG@5:0.1809) [3.2 s] 
+INFO:root:Epoch 29    loss=0.1476 [10.8 s]	 test0=(HR@5:0.4088,NDCG@5:0.3094) test4=(HR@5:0.2702,NDCG@5:0.1836) [4.0 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 30    loss=0.1423 [10.9 s]	 test0=(HR@5:0.4098,NDCG@5:0.3109) test4=(HR@5:0.2702,NDCG@5:0.1846) [4.2 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 31    loss=0.1355 [11.1 s]	 test0=(HR@5:0.4108,NDCG@5:0.3141) test4=(HR@5:0.2721,NDCG@5:0.1875) [3.2 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...
+INFO:root:Epoch 32    loss=0.1302 [11.3 s]	 test0=(HR@5:0.4084,NDCG@5:0.3130) test4=(HR@5:0.2726,NDCG@5:0.1880) [4.0 s] 
+INFO:root:Epoch 33    loss=0.1251 [10.9 s]	 test0=(HR@5:0.4107,NDCG@5:0.3138) test4=(HR@5:0.2749,NDCG@5:0.1905) [4.3 s] 
+INFO:root:Epoch 34    loss=0.1207 [11.1 s]	 test0=(HR@5:0.4150,NDCG@5:0.3199) test4=(HR@5:0.2805,NDCG@5:0.1952) [3.7 s] 
+INFO:root:Save model to ../model/TiSASRec/TiSASRec__Grocery_and_Gourmet_Fo...

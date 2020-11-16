@@ -29,6 +29,14 @@ def parse_global_args(parser):
                         help='Whether load model and continue to train')
     parser.add_argument('--train', type=int, default=1,
                         help='To train the model or not.')
+    parser.add_argument('--finetune', type=int, default=0,
+                        help='To finetune the model or not.')
+    '''
+    parser.add_argument('--stop_point', type=int, default=0,
+                        help='To start from the stop-point.')
+    parser.add_argument('--full_retraining', type=int, default=0,
+                        help='To fully train model from scratch.')
+    '''
     parser.add_argument('--regenerate', type=int, default=0,
                         help='Whether to regenerate intermediate files.')
     return parser
@@ -53,7 +61,7 @@ def main():
 
     # Read data
     #corpus_path = os.path.join(args.path, args.dataset, model_name.reader + '.pkl')
-    corpus_path = os.path.join(args.path, args.dataset, args.suffix, model_name.reader + '.pkl')
+    corpus_path = os.path.join(args.path, args.dataset, args.suffix, str(args.test_length), model_name.reader + '.pkl')
     if not args.regenerate and os.path.exists(corpus_path):
         logging.info('Load corpus from {}'.format(corpus_path))
         corpus = pickle.load(open(corpus_path, 'rb'))
@@ -66,14 +74,19 @@ def main():
     except AttributeError: args.keys = corpus.keys
 
     # Define model
-    print("hi")
-    print(corpus.n_relations)
-    print("hi")
     model = model_name(args, corpus)
     logging.info(model)
     model.apply(model.init_weights)
     model.actions_before_train()
     model.to(model.device)
+
+    '''
+    # Merge data for full training from scratch
+    if len(args.key) > 2 and args.stop_point > 0 and args.full_retraining:
+        for key in args.keys[:args.k]:
+    '''
+
+
 
     # Run model
     data_dict = dict()
@@ -87,6 +100,8 @@ def main():
         model.load_model()
     if args.train > 0:
         runner.train(model, data_dict)
+    if args.finetune > 0:
+        runner.finetune(model, data_dict, stop_point)
     #logging.info(os.linesep + 'Test After Training: ' + runner.print_res(model, data_dict['test']))
     logging.info(os.linesep + 'Test After Training: ' + runner.print_res(model, data_dict[args.keys[-1]]))
 
@@ -111,7 +126,8 @@ if __name__ == '__main__':
     args, extras = parser.parse_known_args()
 
     # Logging configuration
-    log_args = [init_args.model_name, args.dataset, str(args.random_seed)]
+    #log_args = [init_args.model_name, args.dataset, str(args.random_seed)]
+    log_args = [init_args.model_name, args.dataset, str(args.random_seed), args.suffix + str(args.test_length)]
     for arg in ['lr', 'l2'] + model_name.extra_log_args:
         log_args.append(arg + '=' + str(eval('args.' + arg)))
     log_file_name = '__'.join(log_args).replace(' ', '__')

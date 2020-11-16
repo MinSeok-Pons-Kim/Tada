@@ -32,6 +32,7 @@ class BaseReader(object):
         self.suffix = args.suffix
         self.dataset = args.dataset
         self.history_max = args.history_max
+        self.test_length = args.test_length
         self.keys = ['train'] + ['test' + str(i) for i in range(args.test_length)]
 
         t0 = time.time()
@@ -107,10 +108,10 @@ class BaseReader(object):
     def _read_preprocessed_df(self):
         #for key in ['train', 'dev', 'test']:
         for key in self.keys:
-            self.data_df[key] = pd.read_csv(os.path.join(self.prefix, self.dataset, self.suffix, key + '.csv'), sep=self.sep)
+            self.data_df[key] = pd.read_csv(os.path.join(self.prefix, self.dataset, self.suffix, str(self.test_length), key + '.csv'), sep=self.sep)
             #self.data_df[key] = pd.read_csv(os.path.join(self.prefix, self.dataset, '.csv'), sep=self.sep)
 
-        item_meta_path = os.path.join(self.prefix, self.dataset, self.suffix, 'item_meta.csv')
+        item_meta_path = os.path.join(self.prefix, self.dataset, self.suffix, str(self.test_length),'item_meta.csv')
         #item_meta_path = os.path.join(self.prefix, self.dataset, 'item_meta.csv')
         if os.path.exists(item_meta_path):
             self.item_meta_df = pd.read_csv(item_meta_path, sep=self.sep)
